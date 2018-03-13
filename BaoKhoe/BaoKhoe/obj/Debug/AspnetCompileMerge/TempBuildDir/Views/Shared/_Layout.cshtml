@@ -1,0 +1,286 @@
+﻿@using BaoKhoe.Models
+@{
+    List<Category> categories = ViewBag.Categories != null ? ViewBag.Categories : new List<Category>();
+    List<AssignedArticle> articlesHot = ViewBag.ArticlesHot != null ? ViewBag.ArticlesHot : new List<AssignedArticle>();
+    List<Article> articlesTopView = ViewBag.ArticlesTopView != null ? ViewBag.ArticlesTopView : new List<Article>();
+    Category category = ViewBag.Category == null ? new Category() : ViewBag.Category;
+}
+
+<html>
+<head>
+    @Styles.Render("~/bundles/style")
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="fb:app_id" content="290046774701837" />
+    <meta property="fb:pages" content="1619574624988818" />
+    <meta itemprop="url" content="/" />
+    <script src="/assets/data/themes/saostarv4/assets/vendors/jquery/jquery.min.js" type="text/javascript"></script>
+    <title>@ViewBag.Title</title>
+    <meta name="description" content="Trang tin tức giải trí tổng hợp cung cấp các thông tin mới nhất, nhanh nhất, độc đáo nhất về showbiz, điểm phim, điện ảnh trong nước và quốc tế." />
+    <meta name="robots" content="noodp" />
+    <meta property="og:locale" content="vi_VN" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="@ViewBag.Title" />
+    <meta property="og:description" content="Trang thông tin giải trí cung cấp những thông tin mới nhất, nhanh nhất &amp; độc đáo nhất liên quan tới showbiz Việt và quốc tế." />
+    <meta property="og:site_name" content="SaoStar.vn" />
+    <meta property="og:image" content="http://img.saostar.vn/fb660png_1/coverhome.jpg/fbsscover.png" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:description" content="Trang tin tức giải trí tổng hợp cung cấp các thông tin mới nhất, nhanh nhất, độc đáo nhất về showbiz, điểm phim, điện ảnh trong nước và quốc tế." />
+    <meta name="twitter:title" content="@ViewBag.Title" />
+    <meta name="twitter:image" content="http://img.saostar.vn/coverhome.jpg" />
+
+    <link rel='dns-prefetch' href='//s.w.org' />
+
+    <noscript>
+        <style type="text/css">
+            .wpb_animate_when_almost_visible {
+                opacity: 1;
+            }
+        </style>
+    </noscript>
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/assets/data/themes/saostarv4/assets/images/icon/icon-saostar.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/assets/data/themes/saostarv4/assets/images/icon/icon-saostar.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/assets/data/themes/saostarv4/assets/images/icon/icon-saostar.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/data/themes/saostarv4/assets/images/icon/icon-saostar.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/data/themes/saostarv4/assets/images/icon/icon-saostar.png" />
+
+    <script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+    <script>var googletag = googletag || {}; googletag.cmd = googletag.cmd || [];</script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot('/22552065/pc_barbanner1_home_660x90', [660, 90], 'div-gpt-ad-1478165578373-0').addService(googletag.pubads()); googletag.defineSlot('/22552065/pc_barbanner2_home_660x90', [660, 90], 'div-gpt-ad-1478165578373-1').addService(googletag.pubads()); googletag.defineSlot('/22552065/pc_bottombanner_home_1000x90', [1000, 90], 'div-gpt-ad-1478165578373-6').addService(googletag.pubads()); googletag.defineSlot('/22552065/pc_flybanner_home_300x500', [[300, 600], [300, 500]], 'div-gpt-ad-1478165578373-10').addService(googletag.pubads()); googletag.defineSlot('/22552065/pc_hotbanner1_home_300x500', [[300, 600], [300, 500]], 'div-gpt-ad-1478165578373-13').addService(googletag.pubads()); googletag.defineSlot('/22552065/pc_hotbanner2_home_300x500', [[300, 600], [300, 500]], 'div-gpt-ad-1478165578373-16').addService(googletag.pubads()); googletag.defineSlot('/22552065/pc_medbanner1_home_300x250', [300, 250], 'div-gpt-ad-1478165578373-19').addService(googletag.pubads()); googletag.defineSlot('/22552065/pc_medbanner2_home_300x250', [300, 250], 'div-gpt-ad-1478165578373-22').addService(googletag.pubads()); googletag.defineSlot('/22552065/pc_topbanner_home_1000x90', [1000, 90], 'div-gpt-ad-1478165578373-25').addService(googletag.pubads()); if (window.innerWidth >= 1600) { googletag.defineSlot('/22552065/all_balloon_300x500', [300, 500], 'div-gpt-ad-1478165578373-26').addService(googletag.pubads()); } else { $(window).on('load', function () { $('#balloon_wrap').remove(); }); }
+            googletag.defineOutOfPageSlot('/22552065/Out-of-page', 'div-gpt-ad-1489642191065-0').addService(googletag.pubads()); googletag.pubads().collapseEmptyDivs(); googletag.pubads().enableVideoAds(); googletag.companionAds().setRefreshUnfilledSlots(true); googletag.enableServices();
+        });
+    </script>
+</head>
+<body class="home page-template page-template-page-saostar-v3 page-template-page-saostar-v3-php page page-id-240869 wpb-js-composer js-comp-ver-5.1.1 vc_responsive">
+    <div class="page-wrap">
+        <header id="page-head">
+            <div class="pkg">
+                <div class="grid1000 top_page pkg" style="position: relative;">
+                    <a id="open_sub"></a>
+                    <h2><a href="/" class="logo fl"><img width="248" src="/assets/data/themes/saostarv4/assets/images/logotapchi.png" alt="Saostar - Trang tin tức giải trí tổng hợp hàng đầu Việt Nam"></a></h2>
+                    <div class="trending trending_top fl" style="margin-left: 20px;">
+                        <div class="title_trend fontOPSB">TRENDING</div>
+                        <a href="/tag/phau-thuat-tham-my/"><span>#</span>Phẫu thuật thẩm mỹ</a>
+                    </div>
+                    <div class="right_top_page fr">
+                        <div class="fl" style="transform: translateY(-36px); -webkit-transform: translateY(-36px);">
+                            <div class="btn-baogia-top"><a href="/lien-he-quang-cao/">Hợp tác quảng cáo</a></div>
+                        </div>
+                        <div class="box_search fl">
+                            <input class="box_search_input" type="text"
+                                   placeholder="Nhập nội dung tìm kiếm"
+                                   id="search-input"
+                                   required>
+                            <input class="box_search_btn" type="submit"
+                                   onclick="searchClick()">
+                        </div>
+                    </div>
+                </div>
+                <nav id="menu" class="navigation">
+                    <div class="grid1000 pkg" itemscope itemtype="http://schema.org/SiteNavigationElement">
+                        <ul class="menu_main">
+                            <li class="active" itemprop="name">
+                                <a itemprop="url" href="/">
+                                    <img class="imghome" width="16" src="/assets/data/themes/saostarv4/assets/images/icon/icon-home.png" alt="home" title="Trang chủ baokhoe">
+                                </a>
+                            </li>
+
+                            @for (int i = 0; i < categories.Count; i++)
+                            {
+                                if (i < 8)
+                                {
+                                    <li class="@(category.Id == @categories[i].Id ? "active" : "")" itemprop="name">
+                                        <a itemprop="url" href="/@categories[i].Url">@categories[i].Name</a>
+                                        @if (categories[i].SubCategories.Count > 0)
+                                        {
+                                            <div class="ul-sub-cate">
+                                                @foreach (Category c in categories[i].SubCategories)
+                                                {
+                                                    <div class="li-sub-cate @(category.Id == @c.Id ? "active" : "")">
+                                                        <a itemprop="url" href="/@c.Url">@c.Name</a>
+                                                    </div>
+                                                }
+                                            </div>
+                                        }
+                                    </li>
+                                }
+                            }
+
+                            <li itemprop="name">
+                                <a itemprop="url" href="/" title="Nhiều hơn">●●●</a>
+
+                                <div class="ul-sub-cate">
+                                    @for (int i = 8; i < categories.Count && !categories[i].IsSubCategory; i++)
+                                    {
+                                        <div class="li-sub-cate @(category.Id == @categories[i].Id ? "active" : "")">
+                                            <a itemprop="url" href="/@categories[i].Url">@categories[i].Name</a>
+                                        </div>
+                                    }
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <style type="text/css">
+            .btn-baogia-top {
+                background-image: url(/assets/data/themes/saostarv4/assets/images/icon-hop-tac.png);
+                background-position: 7px 1px;
+                background-repeat: no-repeat;
+                background-size: 24px 24px;
+                padding-left: 34px;
+                border-radius: 10px;
+                border: 1px solid #ddd;
+                line-height: 25px;
+                padding-right: 7px;
+                font-weight: 600;
+            }
+        </style>
+
+
+        <main>
+            @RenderBody()
+        </main>
+
+        <footer>
+            <div class="bg_footer pkg">
+                <div class="grid1000 pkg">
+                    <div class="logo-footer border-fo">
+                        <a href="https://saostar.vn"><img class="mar_bottom5" src="/assets/data/themes/saostarv4/assets/images/logo_footer.png" srcset="/assets/data/themes/saostarv4/assets/images/logo_footer.png 1x, /data/themes/saostarv4/assets/images/logo_footer2x.png 2x" alt="Saostar - Trang tin tức giải trí tổng hợp hàng đầu Việt Nam" /></a>
+                        <p class="mar_bottom5"><span style="">Tạp chí điện tử của </span> HỘI NGƯỜI MẪU VIỆT NAM</p>
+                        <ul class="list_footer contact-content" style="padding: 10px 0 10px 0">
+                            <li>Tổng biên tập: <span style="color: #c5c5c5">Nhà báo <span>Nguyễn Quang Minh</span></span></li>
+                            <li style="color:#fff">Phó tổng biên tập: <span style="color: #c5c5c5">Vũ Thị Tuyết Vân - Trương Thụy Tường Vy - Ngô Bá Lục</span></li>
+                            <li style="color:#fff">Giám đốc điều hành: <span style="color: #c5c5c5">Nguyễn Hùng Lâm</span></li>
+                            <li class="bg-y">Giấy phép số: <span style="color: #c5c5c5">13/GP-BTTTT do Bộ Thông tin & Truyền Thông cấp ngày 11/01/2016</span></li>
+                        </ul>
+                        <div class="social-footer">
+                            <a href="https://www.facebook.com/saostar.vn" class="c-link c-link--facebook" target="_blank
+
+               ">
+                                <svg class="c-icon"><use xlink:href="#icon--facebook"></use></svg>
+                            </a>
+                            <a href="https://www.youtube.com/channel/UCjAXQLPHm6XBNtxknzv_4OQ" class="c-link c-link--youtube" target="_blank
+
+              ">
+                                <svg class="c-icon"><use xlink:href="#icon--youtube"></use></svg>
+                            </a>
+                            <a href="https://plus.google.com/+SaoStar" class="c-link c-link--google" target="_blank
+
+              ">
+                                <svg class="c-icon"><use xlink:href="#icon--google"></use></svg>
+                            </a>
+                            <svg style="display: none">
+                                <symbol id="icon--facebook" viewBox="-5 0 32 32">
+                                    <path class="path1" d="M19 6h5v-6h-5c-3.86 0-7 3.14-7 7v3h-4v6h4v16h6v-16h5l1-6h-6v-3c0-0.542 0.458-1 1-1z"></path>
+                                </symbol>
+                                <symbol id="icon--youtube" viewBox="0 0 27 32">
+                                    <path class="path1" d="M17.339 22.214v3.768q0 1.196-0.696 1.196-0.411 0-0.804-0.393v-5.375q0.393-0.393 0.804-0.393 0.696 0 0.696 1.196zM23.375 22.232v0.821h-1.607v-0.821q0-1.214 0.804-1.214t0.804 1.214zM6.125 18.339h1.911v-1.679h-5.571v1.679h1.875v10.161h1.786v-10.161zM11.268 28.5h1.589v-8.821h-1.589v6.75q-0.536 0.75-1.018 0.75-0.321 0-0.375-0.375-0.018-0.054-0.018-0.625v-6.5h-1.589v6.982q0 0.875 0.143 1.304 0.214 0.661 1.036 0.661 0.857 0 1.821-1.089v0.964zM18.929 25.857v-3.518q0-1.304-0.161-1.768-0.304-1-1.268-1-0.893 0-1.661 0.964v-3.875h-1.589v11.839h1.589v-0.857q0.804 0.982 1.661 0.982 0.964 0 1.268-0.982 0.161-0.482 0.161-1.786zM24.964 25.679v-0.232h-1.625q0 0.911-0.036 1.089-0.125 0.643-0.714 0.643-0.821 0-0.821-1.232v-1.554h3.196v-1.839q0-1.411-0.482-2.071-0.696-0.911-1.893-0.911-1.214 0-1.911 0.911-0.5 0.661-0.5 2.071v3.089q0 1.411 0.518 2.071 0.696 0.911 1.929 0.911 1.286 0 1.929-0.946 0.321-0.482 0.375-0.964 0.036-0.161 0.036-1.036zM14.107 9.375v-3.75q0-1.232-0.768-1.232t-0.768 1.232v3.75q0 1.25 0.768 1.25t0.768-1.25zM26.946 22.786q0 4.179-0.464 6.25-0.25 1.054-1.036 1.768t-1.821 0.821q-3.286 0.375-9.911 0.375t-9.911-0.375q-1.036-0.107-1.83-0.821t-1.027-1.768q-0.464-2-0.464-6.25 0-4.179 0.464-6.25 0.25-1.054 1.036-1.768t1.839-0.839q3.268-0.357 9.893-0.357t9.911 0.357q1.036 0.125 1.83 0.839t1.027 1.768q0.464 2 0.464 6.25zM9.125 0h1.821l-2.161 7.125v4.839h-1.786v-4.839q-0.25-1.321-1.089-3.786-0.661-1.839-1.161-3.339h1.893l1.268 4.696zM15.732 5.946v3.125q0 1.446-0.5 2.107-0.661 0.911-1.893 0.911-1.196 0-1.875-0.911-0.5-0.679-0.5-2.107v-3.125q0-1.429 0.5-2.089 0.679-0.911 1.875-0.911 1.232 0 1.893 0.911 0.5 0.661 0.5 2.089zM21.714 3.054v8.911h-1.625v-0.982q-0.946 1.107-1.839 1.107-0.821 0-1.054-0.661-0.143-0.429-0.143-1.339v-7.036h1.625v6.554q0 0.589 0.018 0.625 0.054 0.393 0.375 0.393 0.482 0 1.018-0.768v-6.804h1.625z"></path>
+                                </symbol>
+                                <symbol id="icon--google" viewBox="-0.001 2.91 41.144 26.18">
+                                    <path class="path1" d="M25.661,16.304c0,2.476-0.519,4.681-1.554,6.616c-1.037,1.935-2.513,3.447-4.429,4.536
+                    c-1.917,1.089-4.113,1.634-6.589,1.634c-1.774,0-3.47-0.346-5.089-1.035c-1.619-0.691-3.012-1.62-4.179-2.787
+                    c-1.167-1.166-2.096-2.559-2.786-4.179C0.345,19.47,0,17.773-0.001,16s0.345-3.47,1.036-5.089c0.691-1.62,1.62-3.013,2.786-4.179
+                    S6.38,4.637,8,3.946c1.62-0.69,3.316-1.036,5.089-1.036c3.405,0,6.328,1.143,8.769,3.429L18.303,9.75
+                    c-1.393-1.345-3.131-2.018-5.214-2.018c-1.464,0-2.818,0.369-4.063,1.107c-1.245,0.738-2.229,1.741-2.955,3.009
+                    C5.346,13.116,4.982,14.5,4.982,16s0.362,2.884,1.089,4.152c0.727,1.268,1.712,2.271,2.955,3.009
+                    c1.244,0.737,2.598,1.106,4.063,1.106c0.988,0,1.896-0.137,2.723-0.41c0.827-0.274,1.509-0.617,2.045-1.027s1.003-0.878,1.402-1.402
+                    c0.399-0.523,0.69-1.018,0.875-1.482c0.185-0.463,0.313-0.904,0.384-1.32h-7.429v-4.5h12.356
+                    C25.589,14.875,25.66,15.602,25.661,16.304L25.661,16.304z M41.143,14.125v3.75h-3.731v3.732h-3.75v-3.732H29.93v-3.75h3.731v-3.732
+                    h3.75v3.732H41.143z"></path>
+                                </symbol>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="contact-footer border-fo">
+                        <div style="padding-bottom: 40px">
+                            <div class="search_footer">
+                                <form role="search" method="get" action="/">
+                                    <input type="text" name="s" id="s-footer" class="txt_search_footer" placeholder="Nhập từ khoá tìm kiếm" />
+                                    <input type="submit" class="btn_search_footer">
+                                </form>
+                            </div>
+                        </div>
+                        <div class="address-footer">
+                            <h2 class="fontOP f18 clwhite mar_bottom15 map">Trụ sở TP.Hồ Chí Minh</h2>
+                            <p>179 Lý Chính Thắng, Phường 7, Quận 3, TP.Hồ Chí Minh</p>
+                        </div>
+                        <div class="address-footer">
+                            <h2 class="fontOP f18 clwhite mar_bottom15 map">Trụ sở Hà Nội</h2>
+                            <p>Tầng 14, tòa nhà Hanoi Creative City, Số 1 Lương Yên, Hà Nội</p>
+                        </div>
+                    </div>
+                    <div class="info-footer">
+                        <div class="contact-content">
+                            <h2 class="fontOP f18 clwhite mar_bottom15">Hợp Tác Nội Dung</h2>
+                            <ul class="list_footer">
+                                <li>Email: info@saostar.vn</li>
+                            </ul>
+                        </div>
+                        <div class="contact-content mar_top5">
+                            <h2 class="fontOP f18 clwhite mar_bottom15">Hợp tác quảng cáo</h2>
+                            <ul class="list_footer">
+                                <li>Email : marketing@saostar.vn</li>
+                                <li>Hotline: 0909 76 21 21</li>
+                            </ul>
+                        </div>
+                        <div class="btn-baogia"><a href="/lien-he-quang-cao/">Báo giá quảng cáo</a></div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <div id='balloon_wrap' title="Lên đầu trang">
+            <div id='div-gpt-ad-1478165578373-26' style='height:500px; width:300px;'>
+            </div>
+        </div>
+        <style type="text/css">
+            #balloon_wrap {
+                height: 500px;
+                width: 300px;
+                position: fixed;
+                bottom: 0;
+                right: 0;
+                z-index: 999;
+                -webkit-transition: all 0.3s ease;
+                transition: all 0.3s ease;
+                -webkit-transform: translateX(100%);
+                transform: translateX(100%);
+            }
+
+                #balloon_wrap.visible {
+                    -webkit-transform: translateX(0%);
+                    transform: translateX(0%);
+                }
+        </style>
+        <script type="text/javascript">
+            $(window).load(function () {
+                $(window).on('scroll', function () {
+                    var offset = $(window).scrollTop(); if (offset > 1000) { $('#balloon_wrap').addClass('visible'); } else { $('#balloon_wrap').removeClass('visible'); }
+                })
+            })
+        </script><p id="back-top" style="bottom: 520px;"> <a href="#top"><span></span></a> </p>
+        <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga'); ga('create', 'UA-57466745-1', 'auto'); ga('send', 'pageview');</script>
+    </div>
+    <div id='div-gpt-ad-1489642191065-0'>
+        <script>googletag.cmd.push(function () { googletag.display('div-gpt-ad-1489642191065-0'); });</script>
+    </div>
+
+
+
+    @Scripts.Render("~/bundles/js")
+    @RenderSection("scripts", required: false)
+
+    <script>window.HELP_IMPROVE_VIDEOJS = false; videojs.options.flash.swf = "/data/themes/saostarv4/assets/vendors/videojs/video-js.swf";</script>
+    <script type="text/javascript">$(window).load(function () { setTimeout(function () { var api_key = 'AIzaSyBp2KtZXQw-WYfwRnO6O4RMf0-rW_4Y-OI'; $('.rypp.side-playlist').show().rypp(api_key); }, 2000); });</script>
+</body>
+</html>

@@ -1,0 +1,724 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\nhaht\Desktop\Bao Khoe Publish</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="ApplicationInsights.config">
+      <publishTime>12/11/2017 20:35:46</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/css/fonts.min.css">
+      <publishTime>12/12/2017 23:20:00</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/css/fonts/OpenSans-Bold.svg#OpenSans-Bold">
+      <publishTime>05/10/2017 22:01:25</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/css/fonts/OpenSans-Bold.ttf">
+      <publishTime>05/12/2011 06:54:10</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/css/fonts/OpenSans-Bold.woff">
+      <publishTime>05/10/2017 22:01:25</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/css/fonts/OpenSans-Extrabold.svg#OpenSans-Extrabold">
+      <publishTime>05/10/2017 22:01:26</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/css/fonts/OpenSans-ExtraBold.ttf">
+      <publishTime>12/12/2017 10:47:12</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/css/fonts/OpenSans-Extrabold.woff">
+      <publishTime>05/10/2017 22:01:25</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/css/fonts/OpenSans-Regular.ttf">
+      <publishTime>01/07/2018 15:20:48</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/css/fonts/OpenSans-Semibold.svg#OpenSans-Semibold">
+      <publishTime>05/10/2017 22:01:27</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/css/fonts/OpenSans-Semibold.ttf">
+      <publishTime>05/12/2011 06:42:26</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/css/fonts/OpenSans-Semibold.woff">
+      <publishTime>05/10/2017 22:01:26</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/css/fonts/OpenSans.svg#OpenSans">
+      <publishTime>05/10/2017 22:01:25</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/css/fonts/OpenSans.ttf">
+      <publishTime>02/02/2011 00:00:00</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/css/fonts/OpenSans.woff">
+      <publishTime>05/10/2017 22:01:24</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/css/fonts/roboto/Bold/Roboto-Bold.ttf">
+      <publishTime>01/07/2018 15:29:48</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/css/fonts/roboto/Bold/Roboto-Bold.woff">
+      <publishTime>01/07/2018 15:29:13</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/css/fonts/roboto/Bold/Roboto-Bold.woff2">
+      <publishTime>01/07/2018 15:27:05</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/css/fonts/roboto/Italic/Roboto-Italic.ttf">
+      <publishTime>01/07/2018 15:30:33</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/css/fonts/roboto/Italic/Roboto-Italic.woff">
+      <publishTime>01/07/2018 15:29:35</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/css/fonts/roboto/Italic/Roboto-Italic.woff2">
+      <publishTime>01/07/2018 15:28:56</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/css/fonts/roboto/Regular/Roboto-Regular.woff2">
+      <publishTime>12/12/2017 22:46:39</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/css/menu.png">
+      <publishTime>05/16/2017 11:28:47</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/css/Responsive.css">
+      <publishTime>05/22/2017 20:45:49</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/css/style.css">
+      <publishTime>01/09/2018 21:17:28</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/images/arr-red.png">
+      <publishTime>05/10/2017 22:01:59</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/images/arrow.jpg">
+      <publishTime>05/10/2017 22:01:59</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/images/arrow_slide-right.png">
+      <publishTime>05/10/2017 22:02:00</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/images/arrow_slide.png">
+      <publishTime>05/10/2017 22:02:00</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/images/arrow_white.png">
+      <publishTime>05/10/2017 22:01:58</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/images/arr_breadcump.png">
+      <publishTime>05/10/2017 22:01:59</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/images/arr_more_detail.png">
+      <publishTime>05/10/2017 22:01:57</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/images/arr_slide_video.png">
+      <publishTime>05/10/2017 22:01:57</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/images/avatar-saostar.jpg">
+      <publishTime>05/10/2017 22:18:05</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/images/banner_loading.gif">
+      <publishTime>05/10/2017 22:18:05</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/images/bg_line.png">
+      <publishTime>05/10/2017 22:01:54</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/images/bg_poll.jpg">
+      <publishTime>05/10/2017 22:01:56</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/images/bg_top.png">
+      <publishTime>05/10/2017 22:01:54</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/images/default-user.jpg">
+      <publishTime>05/10/2017 22:02:01</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/images/dot_white.png">
+      <publishTime>05/10/2017 22:01:53</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/images/dot_white_large.png">
+      <publishTime>05/10/2017 22:01:54</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/images/facebook-share-button.png">
+      <publishTime>05/10/2017 22:02:00</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/images/gif-loading.gif">
+      <publishTime>05/10/2017 22:18:05</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/images/head_thevoice.jpg">
+      <publishTime>05/10/2017 22:01:57</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/images/hed_title_red.png">
+      <publishTime>05/10/2017 22:01:57</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/images/hed_title_red_small.png">
+      <publishTime>05/10/2017 22:01:58</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/images/hed_title_white.png">
+      <publishTime>05/10/2017 22:01:58</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/images/icon-hop-tac.png">
+      <publishTime>05/10/2017 22:01:16</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/images/icon-pause-video.png">
+      <publishTime>05/10/2017 22:02:01</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/images/icon-play-video.png">
+      <publishTime>05/10/2017 22:02:01</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/images/icon/icon-home.png">
+      <publishTime>05/10/2017 22:01:15</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/images/icon_backtop.png">
+      <publishTime>05/10/2017 22:01:59</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/images/icon_camera.png">
+      <publishTime>05/10/2017 22:01:59</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/images/icon_checked.png">
+      <publishTime>05/10/2017 22:01:54</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/images/icon_check_poll.png">
+      <publishTime>05/10/2017 22:01:54</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/images/icon_clock_red.png">
+      <publishTime>05/10/2017 22:01:54</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/images/icon_dot_red.png">
+      <publishTime>05/10/2017 22:01:54</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/images/icon_none_check.png">
+      <publishTime>05/10/2017 22:01:54</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/images/icon_pen.png">
+      <publishTime>05/10/2017 22:01:59</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/images/icon_search.png">
+      <publishTime>05/10/2017 22:01:53</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/images/icon_search_footer.png">
+      <publishTime>05/10/2017 22:01:58</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/images/icon_video.png">
+      <publishTime>05/10/2017 22:01:59</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/images/icon_video_larrge.png">
+      <publishTime>05/10/2017 22:01:58</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/images/icon_video_small.png">
+      <publishTime>05/10/2017 22:01:58</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/images/icon_video_small_popup.png">
+      <publishTime>05/10/2017 22:02:01</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/images/logotapchi.png">
+      <publishTime>05/10/2017 22:01:15</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/images/logo_box_special.png">
+      <publishTime>05/10/2017 22:01:15</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/images/logo_footer.png">
+      <publishTime>05/10/2017 22:01:15</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/images/map.png">
+      <publishTime>05/10/2017 22:02:01</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/images/scr-left-active.png">
+      <publishTime>05/10/2017 22:01:16</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/images/scr-left.png">
+      <publishTime>05/10/2017 22:01:16</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/images/scr-right-active.png">
+      <publishTime>05/10/2017 22:01:16</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/images/scr-right.png">
+      <publishTime>05/10/2017 22:01:16</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/images/special_background.png">
+      <publishTime>05/10/2017 22:01:16</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/images/star-white.png">
+      <publishTime>05/10/2017 22:01:54</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/js/main.js">
+      <publishTime>05/16/2017 22:55:20</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/js/setup-video.js">
+      <publishTime>05/10/2017 22:01:15</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/vendors/appear/jquery.appear.js">
+      <publishTime>05/10/2017 22:44:57</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/vendors/audio/jquery.cleanaudioplayer.js">
+      <publishTime>05/10/2017 22:44:57</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/vendors/audio/player.css">
+      <publishTime>05/10/2017 22:45:29</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/vendors/facebook-sdk/sdk.js">
+      <publishTime>12/12/2017 22:35:46</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/vendors/iframe-resizer/iframeResizer.min.js">
+      <publishTime>05/10/2017 22:44:57</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/vendors/iscroll/iscroll.min.js">
+      <publishTime>05/10/2017 22:44:57</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/vendors/jquery/jquery.min.js">
+      <publishTime>05/10/2017 22:01:15</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/vendors/lazyload/jquery.lazyloadxt.js">
+      <publishTime>05/10/2017 22:44:57</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/vendors/menu/headroom.min.js">
+      <publishTime>05/10/2017 22:44:57</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/vendors/menu/jQuery.headroom.min.js">
+      <publishTime>05/10/2017 22:44:57</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/vendors/owl-carousel/owl.carousel.css">
+      <publishTime>05/10/2017 22:45:35</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/vendors/owl-carousel/owl.carousel.js">
+      <publishTime>05/10/2017 22:44:57</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/vendors/remodal/css/remodal.css">
+      <publishTime>05/10/2017 22:45:28</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/vendors/remodal/js/remodal.js">
+      <publishTime>05/10/2017 22:44:57</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/vendors/saostar-custom-icon/style.css">
+      <publishTime>05/10/2017 22:45:29</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/vendors/sticky-kit/jquery.sticky-kit.min.js">
+      <publishTime>05/10/2017 22:44:57</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/vendors/swiper/swiper.min.css">
+      <publishTime>05/10/2017 22:45:35</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/vendors/swiper/swiper.min.js">
+      <publishTime>05/10/2017 22:44:57</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/vendors/videojs/saostar-player.css">
+      <publishTime>05/10/2017 22:45:28</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/vendors/videojs/video-js.min.css">
+      <publishTime>05/10/2017 22:45:34</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/vendors/videojs/video.min.js">
+      <publishTime>05/10/2017 22:44:57</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/vendors/videojs/videojs-contrib-hls.min.js">
+      <publishTime>05/10/2017 22:44:57</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/vendors/videojs/videojs.ads.css">
+      <publishTime>05/10/2017 22:45:34</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/vendors/videojs/videojs.ads.min.js">
+      <publishTime>05/10/2017 22:44:57</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/vendors/videojs/videojs.ima.css">
+      <publishTime>05/10/2017 22:45:34</publishTime>
+    </File>
+    <File Include="assets/data/themes/saostarv4/assets/vendors/videojs/videojs.ima.js">
+      <publishTime>05/10/2017 22:44:57</publishTime>
+    </File>
+    <File Include="assets/image/404.png">
+      <publishTime>01/02/2018 21:38:04</publishTime>
+    </File>
+    <File Include="assets/image/more-button.png">
+      <publishTime>01/07/2018 11:58:10</publishTime>
+    </File>
+    <File Include="assets/pic/qc1.png">
+      <publishTime>05/22/2017 20:35:40</publishTime>
+    </File>
+    <File Include="assets/pic/qc2.png">
+      <publishTime>05/22/2017 20:37:14</publishTime>
+    </File>
+    <File Include="assets/pic/qc3.png">
+      <publishTime>05/22/2017 20:37:51</publishTime>
+    </File>
+    <File Include="assets/pic/qc4.png">
+      <publishTime>05/22/2017 20:38:29</publishTime>
+    </File>
+    <File Include="assets/pic/qc5.png">
+      <publishTime>05/22/2017 20:39:12</publishTime>
+    </File>
+    <File Include="assets/pic/qc6.png">
+      <publishTime>05/22/2017 20:39:46</publishTime>
+    </File>
+    <File Include="assets/pic/qc7.png">
+      <publishTime>05/22/2017 20:40:44</publishTime>
+    </File>
+    <File Include="assets/wp-includes/js/wp-embed.min.js">
+      <publishTime>05/10/2017 22:01:16</publishTime>
+    </File>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>02/22/2013 23:43:40</publishTime>
+    </File>
+    <File Include="bin/Antlr3.Runtime.pdb">
+      <publishTime>02/22/2013 23:43:40</publishTime>
+    </File>
+    <File Include="bin/ApplicationInsights.config">
+      <publishTime>12/11/2017 20:35:46</publishTime>
+    </File>
+    <File Include="bin/App_global.asax.compiled">
+      <publishTime>01/25/2018 22:57:57</publishTime>
+    </File>
+    <File Include="bin/App_global.asax.dll">
+      <publishTime>01/25/2018 22:57:57</publishTime>
+    </File>
+    <File Include="bin/BaoKhoe.dll">
+      <publishTime>01/25/2018 22:57:48</publishTime>
+    </File>
+    <File Include="bin/BaoKhoe.pdb">
+      <publishTime>01/25/2018 22:57:48</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>10/23/2017 13:15:18</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>10/23/2017 13:15:20</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.Agent.Intercept.dll">
+      <publishTime>12/01/2016 07:07:42</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.DependencyCollector.dll">
+      <publishTime>12/08/2016 02:45:42</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.PerfCounterCollector.dll">
+      <publishTime>12/08/2016 02:50:34</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.ServerTelemetryChannel.dll">
+      <publishTime>12/07/2016 06:15:48</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.Web.dll">
+      <publishTime>12/08/2016 02:49:10</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.WindowsServer.dll">
+      <publishTime>12/08/2016 02:50:34</publishTime>
+    </File>
+    <File Include="bin/Microsoft.ApplicationInsights.dll">
+      <publishTime>12/07/2016 06:09:52</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>08/16/2017 04:12:32</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>01/06/2012 02:08:46</publishTime>
+    </File>
+    <File Include="bin/MySql.Data.dll">
+      <publishTime>12/03/2017 14:21:42</publishTime>
+    </File>
+    <File Include="bin/mysql.data.entity.EF6.dll">
+      <publishTime>01/13/2014 22:45:40</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>08/04/2014 11:33:56</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>04/14/2017 06:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe.config">
+      <publishTime>04/14/2017 06:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.rsp">
+      <publishTime>04/14/2017 06:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.exe">
+      <publishTime>04/14/2017 06:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.exe.config">
+      <publishTime>04/14/2017 06:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.rsp">
+      <publishTime>04/14/2017 06:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>04/14/2017 06:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>04/14/2017 06:47:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.Scripting.dll">
+      <publishTime>04/14/2017 06:47:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>04/14/2017 06:47:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.Scripting.dll">
+      <publishTime>04/14/2017 06:47:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>04/14/2017 06:47:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>04/14/2017 06:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.amd64.dll">
+      <publishTime>04/14/2017 06:47:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.x86.dll">
+      <publishTime>04/14/2017 06:47:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>04/14/2017 06:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Win32.Primitives.dll">
+      <publishTime>04/14/2017 06:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.AppContext.dll">
+      <publishTime>04/14/2017 06:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>04/14/2017 06:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Console.dll">
+      <publishTime>04/14/2017 06:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Diagnostics.FileVersionInfo.dll">
+      <publishTime>04/14/2017 06:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Diagnostics.Process.dll">
+      <publishTime>04/14/2017 06:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Diagnostics.StackTrace.dll">
+      <publishTime>04/14/2017 06:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.Compression.dll">
+      <publishTime>04/14/2017 06:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.FileSystem.dll">
+      <publishTime>04/14/2017 06:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.FileSystem.DriveInfo.dll">
+      <publishTime>04/14/2017 06:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.FileSystem.Primitives.dll">
+      <publishTime>04/14/2017 06:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.Pipes.dll">
+      <publishTime>04/14/2017 06:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>04/14/2017 06:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.AccessControl.dll">
+      <publishTime>04/14/2017 06:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Claims.dll">
+      <publishTime>04/14/2017 06:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Cryptography.Algorithms.dll">
+      <publishTime>04/14/2017 06:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Cryptography.Encoding.dll">
+      <publishTime>04/14/2017 06:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Cryptography.Primitives.dll">
+      <publishTime>04/14/2017 06:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Cryptography.X509Certificates.dll">
+      <publishTime>04/14/2017 06:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Principal.Windows.dll">
+      <publishTime>04/14/2017 06:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Text.Encoding.CodePages.dll">
+      <publishTime>04/14/2017 06:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Threading.Thread.dll">
+      <publishTime>04/14/2017 06:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.ValueTuple.dll">
+      <publishTime>04/14/2017 06:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Xml.ReaderWriter.dll">
+      <publishTime>04/14/2017 06:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Xml.XmlDocument.dll">
+      <publishTime>04/14/2017 06:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Xml.XPath.dll">
+      <publishTime>04/14/2017 06:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Xml.XPath.XDocument.dll">
+      <publishTime>04/14/2017 06:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>04/14/2017 06:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe.config">
+      <publishTime>04/14/2017 06:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.rsp">
+      <publishTime>04/14/2017 06:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>04/14/2017 06:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>04/14/2017 06:47:48</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>01/28/2015 19:04:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>01/28/2015 19:02:18</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>02/12/2014 06:26:04</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>01/28/2015 19:02:32</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>01/28/2015 19:04:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>01/28/2015 19:04:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>01/28/2015 19:04:30</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>09/11/2013 08:28:38</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css">
+      <publishTime>12/11/2017 20:35:36</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css">
+      <publishTime>12/11/2017 20:35:36</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>12/11/2017 20:35:29</publishTime>
+    </File>
+    <File Include="docs/MySqlCommand.xml">
+      <publishTime>12/12/2017 21:12:43</publishTime>
+    </File>
+    <File Include="docs/MySqlCommandBuilder.xml">
+      <publishTime>12/12/2017 21:12:43</publishTime>
+    </File>
+    <File Include="docs/MySqlConnection.xml">
+      <publishTime>12/12/2017 21:12:43</publishTime>
+    </File>
+    <File Include="docs/MySqlConnectionStringBuilder.xml">
+      <publishTime>12/12/2017 21:12:43</publishTime>
+    </File>
+    <File Include="docs/MySqlDataAdapter.xml">
+      <publishTime>12/12/2017 21:12:43</publishTime>
+    </File>
+    <File Include="docs/MySqlDataReader.xml">
+      <publishTime>12/12/2017 21:12:43</publishTime>
+    </File>
+    <File Include="docs/MySqlException.xml">
+      <publishTime>12/12/2017 21:12:43</publishTime>
+    </File>
+    <File Include="docs/MySqlHelper.xml">
+      <publishTime>12/12/2017 21:12:43</publishTime>
+    </File>
+    <File Include="docs/MySqlParameter.xml">
+      <publishTime>12/12/2017 21:12:43</publishTime>
+    </File>
+    <File Include="docs/MySqlParameterCollection.xml">
+      <publishTime>12/12/2017 21:12:43</publishTime>
+    </File>
+    <File Include="docs/MySqlTransaction.xml">
+      <publishTime>12/12/2017 21:12:43</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>12/11/2017 20:35:29</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.eot">
+      <publishTime>12/11/2017 20:35:36</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.svg">
+      <publishTime>12/11/2017 20:35:36</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>12/11/2017 20:35:36</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff">
+      <publishTime>12/11/2017 20:35:36</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>12/11/2017 20:35:29</publishTime>
+    </File>
+    <File Include="PrecompiledApp.config">
+      <publishTime>01/25/2018 22:57:51</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>12/11/2017 20:35:36</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>12/11/2017 20:35:36</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.js">
+      <publishTime>12/11/2017 20:35:37</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.js">
+      <publishTime>12/11/2017 20:35:37</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.map">
+      <publishTime>12/11/2017 20:35:37</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.js">
+      <publishTime>12/11/2017 20:35:43</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.min.js">
+      <publishTime>12/11/2017 20:35:43</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.js">
+      <publishTime>12/11/2017 20:35:43</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.min.js">
+      <publishTime>12/11/2017 20:35:43</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.6.2.js">
+      <publishTime>12/11/2017 20:35:41</publishTime>
+    </File>
+    <File Include="Scripts/respond.js">
+      <publishTime>12/11/2017 20:35:42</publishTime>
+    </File>
+    <File Include="Scripts/respond.min.js">
+      <publishTime>12/11/2017 20:35:42</publishTime>
+    </File>
+    <File Include="Scripts/script.js">
+      <publishTime>01/18/2018 22:33:20</publishTime>
+    </File>
+    <File Include="Views/Category/Index.cshtml">
+      <publishTime>01/18/2018 22:40:13</publishTime>
+    </File>
+    <File Include="Views/Category/LoadMore.cshtml">
+      <publishTime>01/18/2018 22:40:18</publishTime>
+    </File>
+    <File Include="Views/Detail/Index.cshtml">
+      <publishTime>01/21/2018 11:49:11</publishTime>
+    </File>
+    <File Include="Views/Error404/Index.cshtml">
+      <publishTime>01/21/2018 12:39:57</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>01/18/2018 22:55:59</publishTime>
+    </File>
+    <File Include="Views/Search/Index.cshtml">
+      <publishTime>01/18/2018 22:41:49</publishTime>
+    </File>
+    <File Include="Views/Search/LoadMore.cshtml">
+      <publishTime>01/18/2018 22:41:52</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>01/09/2018 21:33:14</publishTime>
+    </File>
+    <File Include="Views/Tag/Index.cshtml">
+      <publishTime>01/21/2018 11:53:43</publishTime>
+    </File>
+    <File Include="Views/Tag/LoadMore.cshtml">
+      <publishTime>01/18/2018 22:42:07</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>12/11/2017 20:35:29</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>12/11/2017 20:35:29</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>01/25/2018 22:57:49</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

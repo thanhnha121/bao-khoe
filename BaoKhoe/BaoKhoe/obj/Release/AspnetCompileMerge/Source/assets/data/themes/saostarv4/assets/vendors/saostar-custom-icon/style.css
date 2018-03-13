@@ -1,0 +1,116 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../../../../../../data/themes/saostarv4/assets/vendors/saostar-custom-icon/fonts/icomoon.eot?c49qmu');
+  src:  url('../../../../../../data/themes/saostarv4/assets/vendors/saostar-custom-icon/fonts/icomoon.eot?c49qmu#iefix') format('embedded-opentype'),
+    url('../../../../../../data/themes/saostarv4/assets/vendors/saostar-custom-icon/fonts/icomoon.ttf?c49qmu') format('truetype'),
+    url('../../../../../../data/themes/saostarv4/assets/vendors/saostar-custom-icon/fonts/icomoon.woff?c49qmu') format('woff'),
+    url('../../../../../../data/themes/saostarv4/assets/vendors/saostar-custom-icon/fonts/icomoon.svg?c49qmu#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-clock:before {
+  content: "\f017";
+}
+.icon-left:before {
+  content: "\f060";
+}
+.icon-right:before {
+  content: "\f061";
+}
+.icon-up:before {
+  content: "\f062";
+}
+.icon-down:before {
+  content: "\f063";
+}
+.icon-uniF10D:before {
+  content: "\f10d";
+}
+.icon-uniF10E:before {
+  content: "\f10e";
+}
+.icon-reply:before {
+  content: "\f112";
+}
+.icon-heart:before {
+  content: "\2661";
+}
+.icon-heart-fill:before {
+  content: "\2665";
+}
+.icon-fa-angle-down:before {
+  content: "\e900";
+}
+.icon-fa-facebook:before {
+  content: "\e901";
+}
+.icon-fa-angle-left:before {
+  content: "\e905";
+}
+.icon-fa-angle-right:before {
+  content: "\e906";
+}
+.icon-fa-angle-up:before {
+  content: "\e907";
+}
+.icon-fa-google-plus:before {
+  content: "\e909";
+}
+.icon-reader-arrow:before {
+  content: "\e90d";
+}
+.icon-reader-chevron:before {
+  content: "\e90e";
+}
+.icon-search-mag-glass:before {
+  content: "\f004";
+}
+.icon-home3:before {
+  content: "\e902";
+}
+.icon-spinner3:before {
+  content: "\e97c";
+}
+.icon-cross:before {
+  content: "\ea0f";
+}
+.icon-checkmark:before {
+  content: "\ea10";
+}
+.icon-google-plus:before {
+  content: "\ea8b";
+}
+.icon-facebook:before {
+  content: "\ea90";
+}
+.icon-facebook2:before {
+  content: "\ea91";
+}
+.icon-youtube:before {
+  content: "\ea9d";
+}
+.icon-youtube2:before {
+  content: "\ea9e";
+}
+
+
+
+
+
+

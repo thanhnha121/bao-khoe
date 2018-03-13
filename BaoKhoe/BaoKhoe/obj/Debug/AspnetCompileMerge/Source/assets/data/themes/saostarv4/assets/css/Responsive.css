@@ -1,0 +1,132 @@
+﻿.qcao img {max-width: 100%}
+@media (max-width: 1024px){
+    .grid1000 {width: calc(100% - 20px)}
+    .top_page {padding: 10px 0}
+    .logo.fl {margin: 10px 0 0 60px}
+    .box_search_input {position: static;width: 250px}
+    #menu {position: fixed !important;top: 0 !important;left: -270px;bottom: initial !important;width: 270px;height: 100%;overflow: auto;z-index: 11;transform: translate(0) !important;-webkit-transform: translate(0) !important}
+    #menu .grid1000.pkg {width: auto}
+    .menu_main li {width: auto;float: none}
+    .menu_main > li:first-child > a {background: none}
+    .menu_main > li:first-child > a:before {content:"Trang chủ"}
+    .menu_main li:hover a, .menu_main li.active a {border: none;padding-bottom: 5px}
+    .imghome {display: none}
+    .menu_main li {margin: 0;padding: 0;border-bottom: 1px solid #9a1206}
+    .menu_main li a {display: block;margin: 0 !important;padding: 5px 10px !important;line-height: 24px}
+    .adv_detail, .bg_top, #adContent, .ss-spacer, .bannerhome, .col300.fr, #div-gpt-ad-1478165578373-1, #div-gpt-ad-1478165578373-0 {display: none !important}
+    header#page-head {padding-bottom: 10px}
+    .col660.fl {width: auto;float: none}
+    .list_news_three li {width: calc((100% - 40px)/3)}
+    .info_vertical_news {width: calc(100% - 265px)}
+    .box_vertical.box_vertical_2col.pkg .col440 {width: 60%;box-sizing: border-box}
+    .box_vertical.box_vertical_2col.pkg .col220 {width: 40%;box-sizing: border-box}
+    .capnhat .fr {width: calc(100% - 320px) !important}
+    .list-cat-style3 li {width: calc(50% - 10px)}
+    .list-cat-style3 .cat-style3 {height: auto}
+    .list-cat-style3-3 li {width: calc((100% - 40px)/3)}
+    .list_news_2col_s2.pkg .col485 {width: 72%;box-sizing: border-box}
+    .list_news_2col_s2.pkg .col150 {width: 28%;box-sizing: border-box}
+    .list_video_bottom_home.list_video_bottom_home_full {overflow: hidden}
+    .list_video_bottom_home_full li {width: calc(50% - 10px);margin: 0 20px 20px 0}
+    .list_video_bottom_home_full li:nth-child(3n) {margin-right: 20px}
+    .list_video_bottom_home_full li:nth-child(2n) {margin-right: 0}
+    .list_video_bottom_home_full  .title_video_bottom_home {width: calc(100% - 61px)}
+    .logo-footer.border-fo {width: auto;float: none;border-right: none;padding-right: 0;margin-bottom: 20px}
+    .border-fo {min-height: 0}
+    .contact-footer {width: calc(65% - 31px);padding-left: 0}
+    .info-footer {width: 35%}
+    .search_footer {margin-bottom: -20px}
+    .bg_footer {padding-bottom: 25px}
+    .info_col485 {width: calc(100% - 280px)}
+    .info_hotnews {width: calc(100% - 470px);box-sizing: border-box}
+    .trending_top .title_trend {display: none}
+    .right_top_page.fr .fl:first-child {transform: translate(0) !important;-webkit-transform: translate(0) !important}
+    .trending_top {margin: 5px 0 0 0;float: right}
+    #back-top {right: 10px}
+    #back-top a {width: 50px}
+    #back-top span {background-size: 100% 100%;width: 50px;height: 50px}
+    #open_sub {width: 40px;height: 40px;display: block;position: absolute;top: 37px;left: 0;background: #ed1c24 url(../css/menu.png) no-repeat center;border-radius: 3px}
+    body {transition: all 0.5s;-webkit-transition: all 0.5s;-moz-transition: all 0.5s;overflow-x: hidden}
+    body.active {transform: translateX(270px);-webkit-transform: translateX(270px);-moz-transform: translateX(270px);transition: all 0.5s;-webkit-transition: all 0.5s;-moz-transition: all 0.5s}
+    .list_news_three_cat li {width: calc(50% - 10px)}
+    .list_news_three_cat li:nth-child(3n) {margin-right: 20px}
+    .list_news_three_cat li:nth-child(2n) {margin-right: 0}
+    .list_cat_news  .info_vertical_news {width: calc(100% - 285px)}
+    .list_new_speacial .col380 {width: calc(55% - 31px)}
+    .list_new_speacial .col220 {width: 46%;margin-right: 0;padding-right: 0;border-right: none;float: right}
+    .list_new_speacial .col350 {clear: both;width: auto;float: none;padding-top: 25px}
+    .list_new_speacial .list_new_speacial_right li {width: calc(50% - 10px);float: left;border: none !important;margin-bottom: 15px !important}
+    .list_new_speacial .list_new_speacial_right li:nth-child(2n) {float: right !important}
+    .list_new_speacial .list_new_speacial_right li:nth-child(2n-1) {clear: both}
+    .list_new_speacial  .col-list-right {width: calc(100% - 142px)}
+}
+@media (max-width: 767px){
+    .trending_top, .btn-baogia-top {display: none}
+    .logo.fl {margin-top: 0}
+    .logo.fl img {width: 160px}
+    .top_page {padding: 10px 0 0 0}
+    #open_sub {top: 12px}
+    .box_search_input {width: 0;position: absolute;background-color: white;z-index: -1}
+    .right_top_page {padding-top: 10px}
+    .thumb_hotnews, .info_hotnews {width: auto;height: auto;float:none}
+    .height_hotnews {height: auto}
+    .info_hotnews {padding: 10px}
+    .title_hotnews {font-size: 18px}
+    .sapo_hot_news {margin: 10px 0 0 0}
+    .list_news_three {margin: 10px 0}
+    .list_news_three li {width: auto;float: none;margin: 0 0 15px 0}
+    .mar_bottom30.hd_mobile {display: none !important}
+    .list_vertical_news .module-thumb {width: auto;float: none;margin-bottom: 10px}
+    .info_vertical_news {width: auto;float: none;margin-left: 0}
+    .thumb16x9 {float: none}
+    .box_vertical.box_vertical_2col.pkg .col440, .box_vertical.box_vertical_2col.pkg .col220 {width: auto;float: none;padding: 0}
+    .info_news_485 {width: auto;margin-left: 0;float: none}
+    .box_vertical.box_vertical_2col.pkg .col440 {margin-bottom: 30px}
+    .capnhat .fr {width: auto !important;float: none;clear: both}
+    .capnhat .fl {float: none;margin: auto;margin-bottom: 30px}
+    .news_show .col30per, .box_news_view .col30per {width: auto;float: none;margin-right: 0}
+    .list_sub_cate {display: none}
+    .col48_5per {width: auto;float: none;margin-bottom: 20px}
+    .list-cat-style3 li {width: auto;float: none;margin-right: 0}
+    .list-cat-style3-3 li {width: calc(50% - 10px);margin-bottom: 20px}
+    .list-cat-style3-3 li:nth-child(3n) {margin-right: 20px}
+    .list-cat-style3-3 li:nth-child(2n) {margin-right: 0}
+    .list_news_2col_s2.pkg .col485 {width: auto;float: none;border-right: none;padding-right: 0;margin-bottom: 20px}
+    .thumb265, .info_col485 {width: auto;float: none;margin-left: 0}
+    .thumb265 {margin-bottom: 10px}
+    .list-cat-style3 h2 a {font-size: 15px}
+    .list_news_2col_s2.pkg .col150 {width: auto;float: none;padding-left: 0;overflow: hidden}
+    .list_news_2col_s2.pkg .col150 .module-thumb {width: calc(50% - 10px);float: left;margin-right: 10px}
+    .list_video_bottom_home_full li {width: auto;float: none;margin-right: 0 !important}
+    .contact-footer, .info-footer {width: auto;float: none;padding: 0;border: none}
+    #back-top {bottom: 50px}
+    #back-top a {width: 35px}
+    #back-top span {width: 35px;height: 35px}
+    .mar_bottom40 {margin-bottom: 20px}
+    .head_cate .f50 {font-size: 30px}
+    .head_cate {bottom: 10px}
+    .list_head_cate {margin-top: 0}
+    .list_head_cate li {float: none;display: inline-block;margin-right: 10px}
+    .list_news_three_cat {margin: 15px 0}
+    .list_news_three_cat li {width: auto;float: none;margin-right: 0}
+    .list_news_three_cat h2 a {font-size: 16px}
+    .list_tag_trend a {font-size: 10px;margin: 0 5px 5px 0}
+    .list_cat_news .module-thumb {width: auto;float: none;margin-bottom: 10px}
+    .list_cat_news  .info_vertical_news {width: auto;float: none}
+    .paging a, .paging span, .paging .current {padding: 5px 10px;margin: 0 3px}
+    .box-breadcrumbs {padding: 0 5px;margin-bottom: 20px}
+    .box-breadcrumbs #breadcrumbs {margin: 5px 0 0 0}
+    .box-breadcrumbs .breadcrumbs  li a {font-size: 10px}
+    .arr_bread {margin: 0 5px;height: 15px}
+    .title_detail_news {font-size: 24px;line-height: 30px}
+    #content_detail img {max-width: 100%}
+    #content_detail .wp-caption {width: auto !important}
+    .list_new_speacial .col380 {width: auto;float: none;padding-right: 0;margin: 0 0 20px 0;border: none}
+    .list_new_speacial .col220 {width: auto;float: none;margin-bottom: 20px}
+    .list_new_speacial .col380 .fontOPB.f22 {font-size: 18px}
+    .list_new_speacial .col350 .list_new_speacial_right {overflow: hidden}
+    .list_new_speacial .col350 .list_new_speacial_right .thumb140 {width: auto;float: none;margin-right: 0}
+    .list_new_speacial  .col-list-right {width: auto;float: none;margin-top: 10px}
+    .box_vertical_big .fontOPB {font-size: 20px}
+    .pkg.grid1000.mar_top40.mar_bottom30 {margin-top: 20px}
+}

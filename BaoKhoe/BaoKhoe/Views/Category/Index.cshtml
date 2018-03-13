@@ -1,0 +1,157 @@
+﻿@using BaoKhoe.Models
+@{
+    Category category = ViewBag.Category;
+    List<Article> hotArticles = ViewBag.HotArticles == null ? new List<Article>() : ViewBag.HotArticles;
+    List<Article> newestArticles = ViewBag.NewestArticles == null ? new List<Article>() : ViewBag.NewestArticles;
+
+    ViewBag.Title = category.Name + " - Sức Khỏe 24 Giờ - Trang Thông Tin Y Tế Sức Khỏe Cho Cộng Đồng";
+}
+
+<div class="bg_top_cate mar_bottom30">
+    <div class="grid1000 name_cate">
+        <div class="head_cate">
+            <h1><a href="" class="fontEXB f50 clwhite">@category.Name</a></h1>
+            @if (!category.IsSubCategory)
+            {
+                <ul class="list_head_cate pkg">
+                    @foreach (Category subCategory in category.SubCategories)
+                    {
+                        <li>
+                            <h3>
+                                <a href="/@subCategory.Url/">@subCategory.Name</a>
+                            </h3>
+                        </li>
+                    }
+                </ul>
+            }
+        </div>
+    </div>
+    <div class="bg_gradient"></div>
+</div>
+
+<div class="bg_top grid1000 poslide qcao">
+    <a href="#"><img alt="" src="../../../assets/pic/qc1.png" /></a>
+</div>
+
+<div id="id-category-div" style="display: none;" data-id="@category.Id"></div>
+
+<div class="pkg grid1000 mar_bottom30">
+    <ul class="list_news_three_cat pkg">
+        @for (int i = 0; i < 3 && i < hotArticles.Count; i++)
+        {
+            <li data-url="@hotArticles[i].FriendlyTitle" class="article">
+                <a href="/@hotArticles[i].Category.Url/@hotArticles[i].FriendlyTitle" class="thumb16x9 ">
+                    <img style="background: #ececec" src="@hotArticles[i].Thumbnail"
+                         srcset="@hotArticles[i].Thumbnail"
+                         title="@hotArticles[i].Title">
+                </a>
+                <h2 class="title_list_news_three_cat">
+                    <a class="limit_sapo_new3 f18 fontOPB"
+                       href="/@hotArticles[i].Category.Url/@hotArticles[i].FriendlyTitle">
+                        @hotArticles[i].Title
+                    </a>
+                </h2>
+                <div class="subcat3">
+                </div>
+                <div class="time_cate mar_top_10">
+                    <a href="/@hotArticles[i].Category.Url/" class="tag_cate fontOPB">
+                        @hotArticles[i].Category.Name
+                    </a> - <span class="time_news fontOP">
+                        <time class="time-ago" datetime="@hotArticles[i].CreatedAt.ToString(" s")">
+                            @hotArticles[i].GetDisplayTime()
+                        </time>
+                    </span>
+                </div>
+                <div class="sapo_news limit_sapo_new3 f14">
+                    @hotArticles[i].Headlines
+                </div>
+            </li>
+        }
+
+    </ul>
+    <div class="col660 fl">
+        @*        <div class="tag_trend pkg mar_bottom20 ">*@
+        @*            <div class="head_tag_trend"><span>TỪ KHOÁ ĐƯỢC QUAN TÂM</span></div>*@
+        @*            <div class="trending list_tag_trend fl ">*@
+        @*                <a href="/tag/ho-quynh-huong/"><span>#</span>Hồ Quỳnh Hương</a>*@
+        @*                <a href="/tag/fan-my-tam/"><span>#</span>Fan Mỹ Tâm</a>*@
+        @*                <a href="/tag/orlando-bloom/"><span>#</span>Orlando Bloom</a>*@
+        @*                <a href="/tag/justin-bieber/"><span>#</span>Justin Bieber</a>*@
+        @*                <a href="/tag/hoa-hau-ky-duyen/"><span>#</span>hoa hậu kỳ duyên</a>*@
+        @*                <a href="/tag/hoa-hau-viet-nam-2016/"><span>#</span>Hoa hậu Việt Nam 2016</a>*@
+        @*            </div>*@
+        @*        </div>*@
+        <div class="line_bg mar_bottom30"></div>
+        <div class="list_cat_news">
+            @foreach (Article article in newestArticles)
+            {
+                <div class="box_vertical pkg article" data-url="@article.FriendlyTitle">
+                    <div class="module-thumb">
+                        <a href="/@article.Category.Url/@article.FriendlyTitle" class="thumb16x9 fl">
+                            <img style="background: #ececec"
+                                 src="@article.Thumbnail"
+                                 title="@article.Title" width="265" height="149">
+                        </a>
+                    </div>
+                    <div class="info_vertical_news fl">
+                        <h2>
+                            <a href="/@article.Category.Url/@article.FriendlyTitle" class="title_cate fontOPB">
+                                @article.Title
+                            </a>
+                        </h2>
+                        <div class="time_cate">
+                            <a href="/@article.Category.Url/" class="tag_cate fontOPB">
+                                @article.Category.Name
+                            </a> - <span class="time_news fontOP">
+                                <time class="time-ago" datetime="@article.CreatedAt.ToString(" s")">
+                                    @article.GetDisplayTime()
+                                </time>
+                            </span>
+                        </div>
+                        <div class="sapo_news limit_sapo_new2"> @article.Headlines </div>
+                    </div>
+                </div>
+            }
+        </div>
+        
+        <div id="load-more-category"></div>
+
+        @if (newestArticles.Count >= 20)
+        {
+            <div class="mar_top10" id="btn-load-more-category">
+                <div class='paging'>
+                    <a onclick="loadMoreCategory(this)">
+                        Xem thêm
+                    </a>
+                </div>
+            </div> 
+        }
+    </div>
+    <div class="col300 fr">
+        <div class="ss-spacer">
+            <div class="ss-sidebar">
+                <div id='div-gpt-ad-1478165578373-12' class="qcao">
+                    <a href="#"><img alt="" src="../../../assets/pic/qc2.png" /></a>
+                </div>
+                <div id='div-gpt-ad-1478165578373-18' class="qcao" style='height:250px; width:300px;'>
+                    <a href="#"><img alt="" src="../../../assets/pic/qc4.png" /></a>
+                </div>
+                <div id='div-gpt-ad-1478165578373-15' class="qcao">
+                    <a href="#"><img alt="" src="../../../assets/pic/qc5.png" /></a>
+                </div>
+                <div id='div-gpt-ad-1478165578373-21' class="qcao" style='height:250px; width:300px;'>
+                    <a href="#"><img alt="" src="../../../assets/pic/qc6.png" /></a>
+                </div>
+                <div class="fb-fanbox-wrapper"><div class="fb-page" data-href="https://www.facebook.com/saostar.vn/" data-width="300" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/saostar.vn/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/saostar.vn/">SaoStar</a></blockquote></div></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="pkg grid1000 mar_bottom30">
+    <div class="bannerhome ">
+        <div id='div-gpt-ad-1478165578373-5' class="qcao" style='width:1000px;'>
+            <a href="#"><img alt="" src="../../../assets/pic/qc7.png" /></a>
+        </div>
+    </div>
+</div>

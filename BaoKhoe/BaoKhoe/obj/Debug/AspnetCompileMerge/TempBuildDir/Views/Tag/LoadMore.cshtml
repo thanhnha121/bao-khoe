@@ -1,0 +1,51 @@
+﻿@using BaoKhoe.Models
+@{
+    List<Article> articles = ViewBag.Articles == null ? new List<Article>() : ViewBag.Articles;
+    Layout = null;
+}
+
+<div class="list_cat_news">
+    @foreach (Article article in articles)
+    {
+        <div class="box_vertical pkg article" data-url="@article.FriendlyTitle">
+            <div class="module-thumb">
+                <a href="/@article.Category.Url/@article.FriendlyTitle" class="thumb16x9 fl">
+                    <img style="background: #ececec"
+                         src="@article.Thumbnail"
+                         alt="@article.FriendlyKeyword"
+                         title="@article.Title" width="265" height="149">
+                </a>
+            </div>
+            <div class="info_vertical_news fl">
+                <h2>
+                    <a href="/@article.Category.Url/@article.FriendlyTitle" class="title_cate fontOPB">
+                        @article.Title
+                    </a>
+                </h2>
+                <div class="time_cate">
+                    <a href="/@article.Category.Url/" class="tag_cate fontOPB">
+                        @article.Category.Name
+                    </a> - <span class="time_news fontOP">
+                        <time class="time-ago" datetime="@article.CreatedAt.ToString(" s")">
+                            @article.GetDisplayTime()
+                        </time>
+                    </span>
+                </div>
+                <div class="sapo_news limit_sapo_new2"> @article.Headlines </div>
+            </div>
+        </div>
+    }
+</div>
+
+<div id="load-more-tag"></div>
+
+@if (articles.Count >= 20)
+{
+    <div class="mar_top10" id="btn-load-more-tag">
+        <div class='paging'>
+            <a onclick="loadMoreTag()">
+                Xem thêm
+            </a>
+        </div>
+    </div>
+}
