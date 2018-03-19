@@ -92,7 +92,7 @@ D:\bao-khoe\BaoKhoe\BaoKhoe\bin\Microsoft.AI.DependencyCollector.xml
 D:\bao-khoe\BaoKhoe\BaoKhoe\bin\Microsoft.AI.ServerTelemetryChannel.xml
 D:\bao-khoe\BaoKhoe\BaoKhoe\bin\Microsoft.AI.WindowsServer.xml
 D:\bao-khoe\BaoKhoe\BaoKhoe\bin\Microsoft.AI.Web.xml
-D:\bao-khoe\BaoKhoe\BaoKhoe\obj\Release\BaoKhoe.csprojResolveAssemblyReference.cache
 D:\bao-khoe\BaoKhoe\BaoKhoe\obj\Release\BaoKhoe.csproj.CoreCompileInputs.cache
 D:\bao-khoe\BaoKhoe\BaoKhoe\obj\Release\BaoKhoe.dll
 D:\bao-khoe\BaoKhoe\BaoKhoe\obj\Release\BaoKhoe.pdb
+D:\bao-khoe\BaoKhoe\BaoKhoe\obj\Release\BaoKhoe.csprojResolveAssemblyReference.cache

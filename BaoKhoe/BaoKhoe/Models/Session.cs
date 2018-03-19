@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -13,6 +14,7 @@ namespace BaoKhoe.Models
         /// <summary>
         /// Token của Session
         /// </summary>
+        [MaxLength(128), Column(TypeName = "CHAR")]
         public string Token { get; set; }
         /// <summary>
         /// Thời gian tạo Session

@@ -6,7 +6,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>C:\Users\nhaht\OneDrive\Máy tính\bao-khoe publish</_PublishTargetUrl>
+    <_PublishTargetUrl>D:\bao-khoe-publish</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="ApplicationInsights.config">
@@ -79,10 +79,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/22/2018 23:29:11</publishTime>
     </File>
     <File Include="assets/data/themes/saostarv4/assets/css/Responsive.css">
-      <publishTime>02/22/2018 23:29:11</publishTime>
+      <publishTime>03/16/2018 23:38:53</publishTime>
     </File>
     <File Include="assets/data/themes/saostarv4/assets/css/style.css">
-      <publishTime>02/22/2018 23:29:11</publishTime>
+      <publishTime>03/16/2018 23:43:58</publishTime>
     </File>
     <File Include="assets/data/themes/saostarv4/assets/images/arr-red.png">
       <publishTime>02/22/2018 23:29:11</publishTime>
@@ -235,7 +235,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/22/2018 23:29:11</publishTime>
     </File>
     <File Include="assets/data/themes/saostarv4/assets/js/main.js">
-      <publishTime>02/22/2018 23:29:11</publishTime>
+      <publishTime>03/16/2018 23:28:29</publishTime>
     </File>
     <File Include="assets/data/themes/saostarv4/assets/js/setup-video.js">
       <publishTime>02/22/2018 23:29:11</publishTime>
@@ -286,7 +286,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/22/2018 23:29:11</publishTime>
     </File>
     <File Include="assets/data/themes/saostarv4/assets/vendors/sticky-kit/jquery.sticky-kit.min.js">
-      <publishTime>02/22/2018 23:29:11</publishTime>
+      <publishTime>03/16/2018 07:29:46</publishTime>
     </File>
     <File Include="assets/data/themes/saostarv4/assets/vendors/swiper/swiper.min.css">
       <publishTime>02/22/2018 23:29:11</publishTime>
@@ -320,6 +320,30 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="assets/image/404.png">
       <publishTime>02/22/2018 23:29:11</publishTime>
+    </File>
+    <File Include="assets/image/logo-margin-footer.png">
+      <publishTime>03/16/2018 08:03:06</publishTime>
+    </File>
+    <File Include="assets/image/logo-margin.png">
+      <publishTime>03/16/2018 07:57:31</publishTime>
+    </File>
+    <File Include="assets/image/logo-no-white-200px.png">
+      <publishTime>03/16/2018 20:25:23</publishTime>
+    </File>
+    <File Include="assets/image/logo-no-white.png">
+      <publishTime>03/16/2018 20:25:08</publishTime>
+    </File>
+    <File Include="assets/image/logo-normal.png">
+      <publishTime>03/16/2018 07:44:03</publishTime>
+    </File>
+    <File Include="assets/image/logo-origin.png">
+      <publishTime>03/16/2018 20:22:49</publishTime>
+    </File>
+    <File Include="assets/image/logo-small.png">
+      <publishTime>03/16/2018 07:31:45</publishTime>
+    </File>
+    <File Include="assets/image/logo.png">
+      <publishTime>03/16/2018 07:44:14</publishTime>
     </File>
     <File Include="assets/image/more-button.png">
       <publishTime>02/22/2018 23:29:11</publishTime>
@@ -358,10 +382,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/22/2018 23:29:11</publishTime>
     </File>
     <File Include="bin/BaoKhoe.dll">
-      <publishTime>03/12/2018 08:03:22</publishTime>
+      <publishTime>03/16/2018 21:58:22</publishTime>
     </File>
     <File Include="bin/BaoKhoe.pdb">
-      <publishTime>03/12/2018 08:03:22</publishTime>
+      <publishTime>03/16/2018 21:58:22</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>02/22/2018 23:29:14</publishTime>
@@ -673,31 +697,34 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/22/2018 23:29:11</publishTime>
     </File>
     <File Include="Views/Category/Index.cshtml">
-      <publishTime>02/22/2018 23:29:11</publishTime>
+      <publishTime>03/16/2018 06:53:48</publishTime>
     </File>
     <File Include="Views/Category/LoadMore.cshtml">
       <publishTime>02/22/2018 23:29:11</publishTime>
     </File>
     <File Include="Views/Detail/Index.cshtml">
-      <publishTime>03/11/2018 23:57:22</publishTime>
+      <publishTime>03/16/2018 06:54:03</publishTime>
     </File>
     <File Include="Views/Error404/Index.cshtml">
-      <publishTime>02/22/2018 23:29:11</publishTime>
+      <publishTime>03/16/2018 21:40:48</publishTime>
+    </File>
+    <File Include="Views/FacebookFanpage/Page.cshtml">
+      <publishTime>03/16/2018 06:51:05</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>03/12/2018 07:55:03</publishTime>
+      <publishTime>03/16/2018 22:50:12</publishTime>
     </File>
     <File Include="Views/Search/Index.cshtml">
-      <publishTime>02/22/2018 23:29:11</publishTime>
+      <publishTime>03/16/2018 06:54:37</publishTime>
     </File>
     <File Include="Views/Search/LoadMore.cshtml">
       <publishTime>02/22/2018 23:29:11</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>02/22/2018 23:29:11</publishTime>
+      <publishTime>03/16/2018 23:30:26</publishTime>
     </File>
     <File Include="Views/Tag/Index.cshtml">
-      <publishTime>02/22/2018 23:29:11</publishTime>
+      <publishTime>03/16/2018 06:54:49</publishTime>
     </File>
     <File Include="Views/Tag/LoadMore.cshtml">
       <publishTime>02/22/2018 23:29:11</publishTime>
@@ -709,7 +736,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/22/2018 23:29:11</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>03/12/2018 07:53:01</publishTime>
+      <publishTime>03/16/2018 06:29:31</publishTime>
     </File>
   </ItemGroup>
 </Project>

@@ -288,6 +288,14 @@
     <Content Include="assets\data\themes\saostarv4\assets\vendors\videojs\videojs.ima.css" />
     <Content Include="assets\data\themes\saostarv4\assets\vendors\videojs\videojs.ima.js" />
     <Content Include="assets\image\404.png" />
+    <Content Include="assets\image\logo-margin-footer.png" />
+    <Content Include="assets\image\logo-margin.png" />
+    <Content Include="assets\image\logo-no-white-200px.png" />
+    <Content Include="assets\image\logo-no-white.png" />
+    <Content Include="assets\image\logo-normal.png" />
+    <Content Include="assets\image\logo-origin.png" />
+    <Content Include="assets\image\logo-small.png" />
+    <Content Include="assets\image\logo.png" />
     <Content Include="assets\image\more-button.png" />
     <Content Include="assets\pic\qc1.png" />
     <Content Include="assets\pic\qc2.png" />
@@ -354,6 +362,7 @@
     <Content Include="Views\Category\LoadMore.cshtml" />
     <Content Include="Views\Tag\LoadMore.cshtml" />
     <Content Include="Views\Search\LoadMore.cshtml" />
+    <Content Include="Views\FacebookFanpage\Page.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -512,3 +512,12 @@ $(document).ready(function () {
         $('body').toggleClass("active");
     });
 });
+
+function onExpandMenuClick(e) {
+  $(e.target).parent('li').find('.expand-ul-sub-cate').toggle('show');
+  if ($(e.target).html().trim() === '+') {
+    $(e.target).html('-');
+  } else {
+    $(e.target).html('+');
+  }
+}

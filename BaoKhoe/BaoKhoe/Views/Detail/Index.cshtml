@@ -1,470 +1,471 @@
 ﻿@using BaoKhoe.Models
 @{
-    Article article = ViewBag.Article;
+  Article article = ViewBag.Article;
 
-    List<Article> hotArticles = ViewBag.HotArticles == null ? new List<Article>() : ViewBag.HotArticles;
-    List<Article> sameCatergoryArticles = ViewBag.SameCatergoryArticles == null ? new List<Article>() : ViewBag.SameCatergoryArticles;
+  List<Article> hotArticles = ViewBag.HotArticles == null ? new List<Article>() : ViewBag.HotArticles;
+  List<Article> sameCatergoryArticles = ViewBag.SameCatergoryArticles == null ? new List<Article>() : ViewBag.SameCatergoryArticles;
 
-    ViewBag.Title = article.Title;
+  ViewBag.Title = article.Title;
 }
 
 <div class="bg_top grid1000 poslide">
-    <div id='div-gpt-ad-1478165578373-23' class="qcao">
-        <a href="#"><img alt="" src="../../../assets/pic/qc1.png" /></a>
-    </div>
+  <div id='div-gpt-ad-1478165578373-23' class="qcao">
+    <a href="#"><img alt="" src="../../../assets/pic/qc1.png" /></a>
+  </div>
 </div>
 
 <div class="pkg grid1000">
-    <div class="col660 fl">
-        <div class="box-breadcrumbs">
-            <ul id="breadcrumbs" class="breadcrumbs mar15 mar_bottom15 mar_top15 inline-align">
-                <li class="item-home">
-                    <a class="bread-link bread-home" href="/" title="Trang chủ">Trang chủ</a>
-                </li>
-                <li class="separator arr_bread separator-home"> &nbsp; </li>
-                <li class="item-cat">
-                    <a href="/@article.Category.Url">@article.Category.Name</a>
-                </li>
-            </ul>
-        </div>
-        <article>
-            <meta itemprop="headline" content="@article.Headlines" />
-            <meta itemprop="datePublished" content="@(article.CreatedAt.ToString(" s"))">
-            <meta itemprop="dateModified" content="@(article.CreatedAt.ToString(" s"))">
-            <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
-                <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-                    <meta itemprop="url" content="/data/themes/saostarv4/assets/images/logo.png">
-                    <meta itemprop="width" content="248">
-                    <meta itemprop="height" content="60">
-                </div>
-                <meta itemprop="name" content="Saostar">
-            </div>
-            <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-                <meta itemprop="url" content="https://img.saostar.vn/2017/05/10/1276879/170510starnp-ava.jpg" />
-                <meta itemprop="width" content="696">
-                <meta itemprop="height" content="392">
-            </div>
-            <header>
-                <h1 class="title_detail_news">
-                    @article.Title
-                </h1>
-                <div class="time_detail_news">
-                    <a href="/@article.Category.Url" class="tag_cate fontOPB">
-                        <span itemprop="articleSection">@article.Category.Name</span>
-                    </a>
-                    <span class="cl999 fontOPSB">
-                        - <time class="time-ago" datetime="@(article.CreatedAt.ToString(" s"))">
-                            @article.GetDisplayTime()
-                        </time>
-                    </span>
-                </div>
-                <div class="share_detail">
-                    <ul>
-                        <li><div class="fb-send" data-href="@("/" + article.Category.Url + "/" + article.FriendlyTitle)"></div></li>
-                        <li>
-                            <div class="fb-like" data-href="@("/" + article.Category.Url + "/" + article.FriendlyTitle)" data-layout="button_count" data-action="like" data-share="true" data-show-faces="false"></div>
-                        </li>
-                    </ul>
-                </div>
-            </header>
-
-            <div class="sapo_detail"><h2 itemprop="description">@article.Headlines</h2></div>
-            <div itemprop="articleBody" id="content_detail">
-                @Html.Raw(article.Content)
-            </div>
-            <div class="article_footer clearfix">
-                <div class="share_detail no-border no-padding fl">
-                    <ul>
-                        <li><div class="fb-send" data-href="@("/" + article.Category.Url + "/" + article.FriendlyTitle)"></div></li>
-                        <li>
-                            <div class="fb-like" data-href="@("/" + article.Category.Url + "/" + article.FriendlyTitle)" data-layout="button_count" data-action="like" data-share="true" data-show-faces="false"></div>
-                        </li>
-                    </ul>
-                </div>
-                @if (!string.IsNullOrEmpty(article.AuthorAlias))
-                {
-                    <div class="people_write" itemprop="author" itemscope itemtype="https://schema.org/Person">
-                        <span itemprop="name" class="icon_author">@article.AuthorAlias</span>
-                    </div>
-                }
-            </div>
-            <div class="news_relation">
-                <div class="title_cate_home mar_bottom20">TIN LIÊN QUAN</div>
-                <div class="pkg">
-                    <section>
-                        <ul class="list_news_three pkg">
-                            @foreach (Article articleRelatedArticle in article.RelatedArticles)
-                            {
-                                <li>
-                                    <a href="/@articleRelatedArticle.Category.Url/@articleRelatedArticle.FriendlyTitle"
-                                       class="thumb16x9">
-                                        <img style="background: #ececec"
-                                             src="@articleRelatedArticle.Thumbnail"
-                                             class="unload-image"
-                                             title="@articleRelatedArticle.Title">
-                                    </a>
-                                    <h2 class="title_list_news_three">
-                                        <a href="/@articleRelatedArticle.Category.Url/@articleRelatedArticle.FriendlyTitle">
-                                            @articleRelatedArticle.Title
-                                        </a>
-                                    </h2>
-                                </li>
-                            }
-                        </ul>
-                    </section>
-                </div>
-            </div>
-            <div class="tag_detail mar_bottom20">
-                <div class="tag_trend pkg">
-                    <div class="fontOPSB mar_bottom15 f16"><span>TỪ KHOÁ</span></div>
-                    <div class="trending list_tag_trend fl">
-                        @for (int i = 0; i < article.ListKeywords.Count; i++)
-                        {
-                            <h4 itemprop="keywords">
-                                <a href="/tag/@article.ListKeywords[i].FriendlyTitle/">
-                                    <span>#</span>
-                                    @article.ListKeywords[i].Title
-                                </a>
-                            </h4>
-                        }
-                    </div>
-                </div>
-            </div>
-
-        </article>
+  <div class="col660 fl">
+    <div class="box-breadcrumbs">
+      <ul id="breadcrumbs" class="breadcrumbs mar15 mar_bottom15 mar_top15 inline-align">
+        <li class="item-home">
+          <a class="bread-link bread-home" href="/" title="Trang chủ">Trang chủ</a>
+        </li>
+        <li class="separator arr_bread separator-home"> &nbsp; </li>
+        <li class="item-cat">
+          <a href="/@article.Category.Url">@article.Category.Name</a>
+        </li>
+      </ul>
     </div>
-    <div class="col300 fr">
-        <div class="ss-spacer">
-            <div class="ss-sidebar">
-                <div id='div-gpt-ad-1478165578373-11' class="qcao">
-                    <a href="#"><img alt="" src="../../../assets/pic/qc2.png" /></a>
-                </div>
-                <div id='div-gpt-ad-1478165578373-17' class="qcao" style='height:250px; width:300px;'>
-                    <a href="#"><img alt="" src="../../../assets/pic/qc4.png" /></a>
-                </div>
-                <div id='div-gpt-ad-1478165578373-14' class="qcao">
-                    <a href="#"><img alt="" src="../../../assets/pic/qc5.png" /></a>
-                </div>
-                <div id='div-gpt-ad-1478165578373-20' class="qcao" style='height:250px; width:300px;'>
-                    <a href="#"><img alt="" src="../../../assets/pic/qc6.png" /></a>
-                </div>
-                <div class="fb-fanbox-wrapper"><div class="fb-page" data-href="https://www.facebook.com/saostar.vn/" data-width="300" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/saostar.vn/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/saostar.vn/">SaoStar</a></blockquote></div></div>
-            </div>
+    <article>
+      <meta itemprop="headline" content="@article.Headlines" />
+      <meta itemprop="datePublished" content="@(article.CreatedAt.ToString(" s"))">
+      <meta itemprop="dateModified" content="@(article.CreatedAt.ToString(" s"))">
+      <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+        <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+          <meta itemprop="url" content="/data/themes/saostarv4/assets/images/logo.png">
+          <meta itemprop="width" content="248">
+          <meta itemprop="height" content="60">
         </div>
-    </div>
-</div>
-<div class="pkg grid1000">
-    <div class="line_bg mar_top30 mar_bottom30"></div>
+        <meta itemprop="name" content="Saostar">
+      </div>
+      <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+        <meta itemprop="url" content="https://img.saostar.vn/2017/05/10/1276879/170510starnp-ava.jpg" />
+        <meta itemprop="width" content="696">
+        <meta itemprop="height" content="392">
+      </div>
+      <header>
+        <h1 class="title_detail_news">
+          @article.Title
+        </h1>
+        <div class="time_detail_news">
+          <a href="/@article.Category.Url" class="tag_cate fontOPB">
+            <span itemprop="articleSection">@article.Category.Name</span>
+          </a>
+          <span class="cl999 fontOPSB">
+            - <time class="time-ago" datetime="@(article.CreatedAt.ToString(" s"))">
+              @article.GetDisplayTime()
+            </time>
+          </span>
+        </div>
+        <div class="share_detail">
+          <ul>
+            <li><div class="fb-send" data-href="@("/" + article.Category.Url + "/" + article.FriendlyTitle)"></div></li>
+            <li>
+              <div class="fb-like" data-href="@("/" + article.Category.Url + "/" + article.FriendlyTitle)" data-layout="button_count" data-action="like" data-share="true" data-show-faces="false"></div>
+            </li>
+          </ul>
+        </div>
+      </header>
 
-    <hr class="line mar_bottom25 mar_top20">
-    <div class="pkg list_new_speacial">
-        <div class="title_cate_home mar_bottom20">Tin hot trong ngày</div>
+      <div class="sapo_detail"><h2 itemprop="description">@article.Headlines</h2></div>
+      <div itemprop="articleBody" id="content_detail">
+        @Html.Raw(article.Content)
+      </div>
+      <div class="article_footer clearfix">
+        <div class="share_detail no-border no-padding fl">
+          <ul>
+            <li><div class="fb-send" data-href="@("/" + article.Category.Url + "/" + article.FriendlyTitle)"></div></li>
+            <li>
+              <div class="fb-like" data-href="@("/" + article.Category.Url + "/" + article.FriendlyTitle)" data-layout="button_count" data-action="like" data-share="true" data-show-faces="false"></div>
+            </li>
+          </ul>
+        </div>
+        @if (!string.IsNullOrEmpty(article.AuthorAlias))
+        {
+          <div class="people_write" itemprop="author" itemscope itemtype="https://schema.org/Person">
+            <span itemprop="name" class="icon_author">@article.AuthorAlias</span>
+          </div>
+        }
+      </div>
+      <div class="news_relation">
+        <div class="title_cate_home mar_bottom20">TIN LIÊN QUAN</div>
         <div class="pkg">
-            @if (hotArticles.Count > 1)
-            {
-                <div class="col380 fl">
-                    <div class="module-thumb mar_bottom10">
-                        <a href="@("/" + hotArticles[0].Category.Url + "/" + hotArticles[0].FriendlyTitle)" class="thumb16x9">
-                            <img style="background: #ececec" src="@hotArticles[0].Thumbnail" class="unload-image"
-                                 data-src="@hotArticles[0].Thumbnail"
-                                 title="@hotArticles[0].Title">
-                        </a>
-                    </div>
-                    <h3>
-                        <a href="@("/" + hotArticles[0].Category.Url + "/" + hotArticles[1].FriendlyTitle)"
-                           class="fontOPB f22">@hotArticles[1].Title</a>
-                    </h3>
-                    <div class="mar_top10">
-                        <a href="/@hotArticles[0].Category.Url/" class="tag_cate fontOPB">
-                            @hotArticles[0].Category.Name
-                        </a>
-                        <span class="cl999 fontOP">
-                            - <time class="time-ago" datetime="@(hotArticles[0].CreatedAt.ToString(" s"))">
-                                @hotArticles[0].GetDisplayTime()
-                            </time>
-                        </span>
-                    </div>
-                </div>
-                <div class="col220 fl">
-                    <div class="module-thumb mar_bottom10">
-                        <a href="@("/" + hotArticles[1].Category.Url + "/" + hotArticles[1].FriendlyTitle)" class="thumb16x9">
-                            <img style="background: #ececec"
-                                 src="@hotArticles[1].Thumbnail"
-                                 class="unload-image"
-                                 data-src="@hotArticles[1].Thumbnail"
-                                 title="@hotArticles[1].Title" />
-                        </a>
-                    </div>
-                    <h3>
-                        <a href="@("/" + hotArticles[1].Category.Url + "/" + hotArticles[1].FriendlyTitle)" class="fontOPB f16">
-                            @hotArticles[1].Title
-                        </a>
-                    </h3>
-                    <div class="mar_top10 f12">
-                        <a href="/@hotArticles[1].Category.Url/" class="tag_cate fontOPB">
-                            @hotArticles[1].Category.Name
-                        </a>
-                        <span class="cl999 fontOP">
-                            - <time class="time-ago" datetime="@(hotArticles[1].CreatedAt.ToString(" s"))">
-                                @hotArticles[1].GetDisplayTime()
-                            </time>
-                        </span>
-                    </div>
-                    <div class="sapo_news mar_top5">
-                        @hotArticles[1].Headlines
-                    </div>
-                </div>
-            }
-
-            @if (hotArticles.Count > 2)
-            {
-                <div class="col350 fl">
-                    <ul class="list_new_speacial_right">
-                        @for (int i = 2; i < hotArticles.Count; i++)
-                        {
-                            <li class="pkg">
-                                <div class="module-thumb thumb140 fl">
-                                    <a href="/@hotArticles[i].Category.Url/@hotArticles[i].FriendlyTitle" class="thumb16x9">
-                                        <img style="background: #ececec" src="@hotArticles[i].Thumbnail"
-                                             class="unload-image"
-                                             data-src="@hotArticles[i].Thumbnail"
-                                             title="@hotArticles[i].Title">
-                                    </a>
-                                </div>
-                                <div class="fl col-list-right">
-                                    <h3 class="limit_sapo_new3">
-                                        <a href="/@hotArticles[i].Category.Url/@hotArticles[i].FriendlyTitle">
-                                            @hotArticles[i].Title
-                                        </a>
-                                    </h3>
-                                    <div class="f11">
-                                        <a href="/@hotArticles[i].Category.Url/" class="tag_cate fontOPB">
-                                            @hotArticles[i].Category.Name
-                                        </a>
-                                    </div>
-                                </div>
-                            </li>
-                        }
-                    </ul>
-                </div>
-            }
-
+          <section>
+            <ul class="list_news_three pkg">
+              @foreach (Article articleRelatedArticle in article.RelatedArticles)
+              {
+                <li>
+                  <a href="/@articleRelatedArticle.Category.Url/@articleRelatedArticle.FriendlyTitle"
+                     class="thumb16x9">
+                    <img style="background: #ececec"
+                         src="@articleRelatedArticle.Thumbnail"
+                         class="unload-image"
+                         title="@articleRelatedArticle.Title">
+                  </a>
+                  <h2 class="title_list_news_three">
+                    <a href="/@articleRelatedArticle.Category.Url/@articleRelatedArticle.FriendlyTitle">
+                      @articleRelatedArticle.Title
+                    </a>
+                  </h2>
+                </li>
+              }
+            </ul>
+          </section>
         </div>
+      </div>
+      <div class="tag_detail mar_bottom20">
+        <div class="tag_trend pkg">
+          <div class="fontOPSB mar_bottom15 f16"><span>TỪ KHOÁ</span></div>
+          <div class="trending list_tag_trend fl">
+            @for (int i = 0; i < article.ListKeywords.Count; i++)
+            {
+              <h4 itemprop="keywords">
+                <a href="/tag/@article.ListKeywords[i].FriendlyTitle/">
+                  <span>#</span>
+                  @article.ListKeywords[i].Title
+                </a>
+              </h4>
+            }
+          </div>
+        </div>
+      </div>
+
+    </article>
+  </div>
+  <div class="col300 fr">
+    <div class="ss-spacer">
+      <div class="ss-sidebar">
+        <div id='div-gpt-ad-1478165578373-11' class="qcao">
+          <a href="#"><img alt="" src="../../../assets/pic/qc2.png" /></a>
+        </div>
+        <div id='div-gpt-ad-1478165578373-17' class="qcao" style='height:250px; width:300px;'>
+          <a href="#"><img alt="" src="../../../assets/pic/qc4.png" /></a>
+        </div>
+        <div id='div-gpt-ad-1478165578373-14' class="qcao">
+          <a href="#"><img alt="" src="../../../assets/pic/qc5.png" /></a>
+        </div>
+        <div id='div-gpt-ad-1478165578373-20' class="qcao" style='height:250px; width:300px;'>
+          <a href="#"><img alt="" src="../../../assets/pic/qc6.png" /></a>
+        </div>
+        @RenderPage("~/Views/FacebookFanpage/Page.cshtml", null)
+
+      </div>
     </div>
+  </div>
+</div>
+<div class="pkg grid1000">
+  <div class="line_bg mar_top30 mar_bottom30"></div>
+
+  <hr class="line mar_bottom25 mar_top20">
+  <div class="pkg list_new_speacial">
+    <div class="title_cate_home mar_bottom20">Tin hot trong ngày</div>
+    <div class="pkg">
+      @if (hotArticles.Count > 1)
+      {
+        <div class="col380 fl">
+          <div class="module-thumb mar_bottom10">
+            <a href="@("/" + hotArticles[0].Category.Url + "/" + hotArticles[0].FriendlyTitle)" class="thumb16x9">
+              <img style="background: #ececec" src="@hotArticles[0].Thumbnail" class="unload-image"
+                   data-src="@hotArticles[0].Thumbnail"
+                   title="@hotArticles[0].Title">
+            </a>
+          </div>
+          <h3>
+            <a href="@("/" + hotArticles[0].Category.Url + "/" + hotArticles[1].FriendlyTitle)"
+               class="fontOPB f22">@hotArticles[1].Title</a>
+            </h3>
+            <div class="mar_top10">
+              <a href="/@hotArticles[0].Category.Url/" class="tag_cate fontOPB">
+                @hotArticles[0].Category.Name
+              </a>
+              <span class="cl999 fontOP">
+                - <time class="time-ago" datetime="@(hotArticles[0].CreatedAt.ToString(" s"))">
+                  @hotArticles[0].GetDisplayTime()
+                </time>
+              </span>
+            </div>
+          </div>
+          <div class="col220 fl">
+            <div class="module-thumb mar_bottom10">
+              <a href="@("/" + hotArticles[1].Category.Url + "/" + hotArticles[1].FriendlyTitle)" class="thumb16x9">
+                <img style="background: #ececec"
+                     src="@hotArticles[1].Thumbnail"
+                     class="unload-image"
+                     data-src="@hotArticles[1].Thumbnail"
+                     title="@hotArticles[1].Title" />
+              </a>
+            </div>
+            <h3>
+              <a href="@("/" + hotArticles[1].Category.Url + "/" + hotArticles[1].FriendlyTitle)" class="fontOPB f16">
+                @hotArticles[1].Title
+              </a>
+            </h3>
+            <div class="mar_top10 f12">
+              <a href="/@hotArticles[1].Category.Url/" class="tag_cate fontOPB">
+                @hotArticles[1].Category.Name
+              </a>
+              <span class="cl999 fontOP">
+                - <time class="time-ago" datetime="@(hotArticles[1].CreatedAt.ToString(" s"))">
+                  @hotArticles[1].GetDisplayTime()
+                </time>
+              </span>
+            </div>
+            <div class="sapo_news mar_top5">
+              @hotArticles[1].Headlines
+            </div>
+          </div>
+        }
+
+      @if (hotArticles.Count > 2)
+      {
+        <div class="col350 fl">
+          <ul class="list_new_speacial_right">
+            @for (int i = 2; i < hotArticles.Count; i++)
+            {
+              <li class="pkg">
+                <div class="module-thumb thumb140 fl">
+                  <a href="/@hotArticles[i].Category.Url/@hotArticles[i].FriendlyTitle" class="thumb16x9">
+                    <img style="background: #ececec" src="@hotArticles[i].Thumbnail"
+                         class="unload-image"
+                         data-src="@hotArticles[i].Thumbnail"
+                         title="@hotArticles[i].Title">
+                  </a>
+                </div>
+                <div class="fl col-list-right">
+                  <h3 class="limit_sapo_new3">
+                    <a href="/@hotArticles[i].Category.Url/@hotArticles[i].FriendlyTitle">
+                      @hotArticles[i].Title
+                    </a>
+                  </h3>
+                  <div class="f11">
+                    <a href="/@hotArticles[i].Category.Url/" class="tag_cate fontOPB">
+                      @hotArticles[i].Category.Name
+                    </a>
+                  </div>
+                </div>
+              </li>
+            }
+          </ul>
+        </div>
+      }
+
+    </div>
+  </div>
 </div>
 <div class="pkg grid1000 mar_top40">
-    <div class="line_bg mar_top20 mar_bottom40"></div>
-    <div class="col660 fl">
-        <div class="title_cate_home mar_bottom20">Tin cùng chuyên mục</div>
-        <div class="list_cat_news list_cat_news_detail ">
-            @for (int i = 0; i < 4 && i < sameCatergoryArticles.Count; i++)
-            {
-                <div class="box_vertical pkg">
-                    <div class="module-thumb">
-                        <a href="/@sameCatergoryArticles[i].Category.Url/@sameCatergoryArticles[i].FriendlyTitle" class="thumb16x9 fl">
-                            <img style="background: #ececec" src="@sameCatergoryArticles[i].Thumbnail"
-                                 class="unload-image"
-                                 data-src="@sameCatergoryArticles[i].Thumbnail"
-                                 title="@sameCatergoryArticles[i].Title">
-                        </a>
-                    </div>
-                    <div class="info_vertical_news fl">
-                        <h3>
-                            <a href="/@sameCatergoryArticles[i].Category.Url/@sameCatergoryArticles[i].FriendlyTitle" class="title_cate fontOPB">
-                                @sameCatergoryArticles[i].Title
-                            </a>
-                        </h3>
-                        <div class="time_cate">
-                            <a href="/@sameCatergoryArticles[i].Category.Url/" class="tag_cate fontOPB">
-                                @sameCatergoryArticles[i].Category.Name
-                            </a> - <span class="time_news fontOP">
-                                <time class="time-ago" datetime="@(sameCatergoryArticles[i].CreatedAt.ToString(" s"))">
-                                    @sameCatergoryArticles[i].GetDisplayTime()
-                                </time>
-                            </span>
-                        </div>
-                        <div class="sapo_news limit_sapo_new2">
-                            @sameCatergoryArticles[i].Headlines
-                        </div>
-                    </div>
-                </div>
-            }
-
-            @if (sameCatergoryArticles.Count >= 4)
-            {
-                <div class="box_vertical box_vertical_big">
-                    <h3>
-                        <a href="/@sameCatergoryArticles[4].Category.Url/@sameCatergoryArticles[5].FriendlyTitle"
-                           class="fontOPB f24 mar_bottom10">
-                            @sameCatergoryArticles[4].Title
-                        </a>
-                    </h3>
-                    <div class="time_cate mar_bottom5">
-                        <a href="/@sameCatergoryArticles[4].Category.Url/" class="tag_cate fontOPB">
-                            @sameCatergoryArticles[4].Category.Name
-                        </a> - <span class="time_news fontOP">
-                            <time class="time-ago" datetime="@sameCatergoryArticles[4].CreatedAt.ToString(" s")">
-                                @sameCatergoryArticles[4].GetDisplayTime()
-                            </time>
-                        </span>
-                    </div>
-                    <div class="sapo_news mar_bottom20">
-                        @sameCatergoryArticles[4].Headlines
-                    </div>
-                    <a href="/@sameCatergoryArticles[4].Category.Url/@sameCatergoryArticles[4].FriendlyTitle" class="thumbblock">
-                        <img style="background: #ececec"
-                             src="@sameCatergoryArticles[4].Thumbnail"
-                             class="unload-image"
-                             data-src="@sameCatergoryArticles[4].Thumbnail"
-                             title="@sameCatergoryArticles[4].Title">
-                    </a>
-                </div>
-            }
-
-            @for (int i = 5; i < sameCatergoryArticles.Count && i < 7; i++)
-            {
-                <div class="box_vertical pkg">
-                    <div class="module-thumb">
-                        <a href="/@sameCatergoryArticles[i].Category.Url/@sameCatergoryArticles[i].FriendlyTitle" class="thumb16x9 fl">
-                            <img style="background: #ececec" src="@sameCatergoryArticles[i].Thumbnail"
-                                 class="unload-image"
-                                 data-src="@sameCatergoryArticles[i].Thumbnail"
-                                 title="@sameCatergoryArticles[i].Title">
-                        </a>
-                    </div>
-                    <div class="info_vertical_news fl">
-                        <h3>
-                            <a href="/@sameCatergoryArticles[i].Category.Url/@sameCatergoryArticles[i].FriendlyTitle" class="title_cate fontOPB">
-                                @sameCatergoryArticles[i].Title
-                            </a>
-                        </h3>
-                        <div class="time_cate">
-                            <a href="/@sameCatergoryArticles[i].Category.Url/" class="tag_cate fontOPB">
-                                @sameCatergoryArticles[i].Category.Name
-                            </a> - <span class="time_news fontOP">
-                                <time class="time-ago" datetime="@sameCatergoryArticles[i].CreatedAt.ToString(" s")">
-                                    @sameCatergoryArticles[i].GetDisplayTime()
-                                </time>
-                            </span>
-                        </div>
-                        <div class="sapo_news limit_sapo_new2"> @sameCatergoryArticles[i].Headlines </div>
-                    </div>
-                </div>
-            }
-
-            <div class="box_vertical box_vertical_2col pkg">
-                @if (sameCatergoryArticles.Count >= 8)
-                {
-                    <div class="col440 fl">
-                        <h3>
-                            <a href="/@sameCatergoryArticles[7].Category.Url/@sameCatergoryArticles[7].FriendlyTitle"
-                               class="title_cate fontOPB mar_bottom15">
-                                @sameCatergoryArticles[7].Title
-                            </a>
-                        </h3>
-                        <div class="module-thumb">
-                            <a href="/@sameCatergoryArticles[7].Category.Url/@sameCatergoryArticles[7].FriendlyTitle" class="thumb16x9">
-                                <img style="background: #ececec" src="@sameCatergoryArticles[7].Thumbnail"
-                                     class="unload-image"
-                                     data-src="@sameCatergoryArticles[7].Thumbnail"
-                                     title="@sameCatergoryArticles[7].Title">
-                            </a>
-                        </div>
-                        <div class="info_news_485 fl">
-                            <div class="time_cate">
-                                <a href="/@sameCatergoryArticles[7].Category.Url/" class="tag_cate fontOPB">
-                                    @sameCatergoryArticles[7].Category.Name
-                                </a> - <span class="time_news fontOP">
-                                    <time class="time-ago" datetime="@sameCatergoryArticles[7].CreatedAt.ToString(" s")">
-                                        @sameCatergoryArticles[7].GetDisplayTime()
-                                    </time>
-                                </span>
-                            </div>
-                            <div class="sapo_news limit_sapo_new4"> @sameCatergoryArticles[7].Headlines </div>
-                        </div>
-                    </div>
-                }
-                @if (sameCatergoryArticles.Count >= 9)
-                {
-                    <div class="col220 fr">
-                        <a href="/@sameCatergoryArticles[8].Category.Url/" class="tag_cate fontOPB">
-                            @sameCatergoryArticles[8].Category.Name
-                        </a> - <span class="time_news fontOP">
-                            <time class="time-ago" datetime="@sameCatergoryArticles[8].CreatedAt.ToString(" s")">
-                                @sameCatergoryArticles[8].GetDisplayTime()
-                            </time>
-                        </span>
-
-                        <h3 class="mar_bottom10">
-                            <a href="/@sameCatergoryArticles[8].Category.Url/@sameCatergoryArticles[8].FriendlyTitle"
-                               class="f14 fontOPB mar_bottom10">@sameCatergoryArticles[8].Title</a>
-                        </h3>
-                        <div class="thumbblock thumb110x74 fl">
-                            <a href="/@sameCatergoryArticles[8].Category.Url/@sameCatergoryArticles[8].FriendlyTitle" class="thumb16x9">
-                                <img style="background: #ececec" src="@sameCatergoryArticles[8].Thumbnail"
-                                     class="unload-image"
-                                     data-src="@sameCatergoryArticles[8].Thumbnail"
-                                     title="@sameCatergoryArticles[8].Title">
-                            </a>
-                        </div>
-                        <div class="sapo_news f13">
-                            @sameCatergoryArticles[8].Headlines
-                        </div>
-                    </div>
-                }
+  <div class="line_bg mar_top20 mar_bottom40"></div>
+  <div class="col660 fl">
+    <div class="title_cate_home mar_bottom20">Tin cùng chuyên mục</div>
+    <div class="list_cat_news list_cat_news_detail ">
+      @for (int i = 0; i < 4 && i < sameCatergoryArticles.Count; i++)
+      {
+        <div class="box_vertical pkg">
+          <div class="module-thumb">
+            <a href="/@sameCatergoryArticles[i].Category.Url/@sameCatergoryArticles[i].FriendlyTitle" class="thumb16x9 fl">
+              <img style="background: #ececec" src="@sameCatergoryArticles[i].Thumbnail"
+                   class="unload-image"
+                   data-src="@sameCatergoryArticles[i].Thumbnail"
+                   title="@sameCatergoryArticles[i].Title">
+            </a>
+          </div>
+          <div class="info_vertical_news fl">
+            <h3>
+              <a href="/@sameCatergoryArticles[i].Category.Url/@sameCatergoryArticles[i].FriendlyTitle" class="title_cate fontOPB">
+                @sameCatergoryArticles[i].Title
+              </a>
+            </h3>
+            <div class="time_cate">
+              <a href="/@sameCatergoryArticles[i].Category.Url/" class="tag_cate fontOPB">
+                @sameCatergoryArticles[i].Category.Name
+              </a> - <span class="time_news fontOP">
+                <time class="time-ago" datetime="@(sameCatergoryArticles[i].CreatedAt.ToString(" s"))">
+                  @sameCatergoryArticles[i].GetDisplayTime()
+                </time>
+              </span>
             </div>
-
-            @for (int i = 9; i < sameCatergoryArticles.Count && i < 20; i++)
-            {
-                <div class="box_vertical pkg">
-                    <div class="module-thumb">
-                        <a class="thumb16x9 fl">
-                            <img style="background: #ececec"
-                                 src="../../../assets/data/themes/saostarv4/assets/images/banner_loading.gif"
-                                 class="unload-image"
-                                 data-src="@sameCatergoryArticles[i].Thumbnail"
-                                 title="@sameCatergoryArticles[i].Title">
-                        </a>
-                    </div>
-                    <div class="info_vertical_news fl">
-                        <h3>
-                            <a href="/@sameCatergoryArticles[i].Category.Url/@sameCatergoryArticles[i].FriendlyTitle"
-                               class="title_cate fontOPB">
-                                @sameCatergoryArticles[i].Title
-                            </a>
-                        </h3>
-                        <div class="time_cate">
-                            <a href="/@sameCatergoryArticles[i].Category.Url/" class="tag_cate fontOPB">
-                                @sameCatergoryArticles[i].Category.Name
-                            </a> - <span class="time_news fontOP">
-                                <time class="time-ago" datetime="@sameCatergoryArticles[i].CreatedAt.ToString(" s")">
-                                    @sameCatergoryArticles[i].GetDisplayTime()
-                                </time>
-                            </span>
-                        </div>
-                        <div class="sapo_news limit_sapo_new2"> @sameCatergoryArticles[i].Headlines </div>
-                    </div>
-                </div>
-            }
-
-        </div>
-    </div>
-    <div class="col300 fr">
-        <div class="ss-spacer">
-            <div class="ss-sidebar">
-                <div id='div-gpt-ad-1478236013072-0' class="qcao">
-                    <a href="#"><img alt="" src="../../../assets/pic/qc5.png" /></a>
-                </div>
+            <div class="sapo_news limit_sapo_new2">
+              @sameCatergoryArticles[i].Headlines
             </div>
+          </div>
         </div>
+      }
+
+      @if (sameCatergoryArticles.Count >= 4)
+      {
+        <div class="box_vertical box_vertical_big">
+          <h3>
+            <a href="/@sameCatergoryArticles[4].Category.Url/@sameCatergoryArticles[5].FriendlyTitle"
+               class="fontOPB f24 mar_bottom10">
+              @sameCatergoryArticles[4].Title
+            </a>
+          </h3>
+          <div class="time_cate mar_bottom5">
+            <a href="/@sameCatergoryArticles[4].Category.Url/" class="tag_cate fontOPB">
+              @sameCatergoryArticles[4].Category.Name
+            </a> - <span class="time_news fontOP">
+              <time class="time-ago" datetime="@sameCatergoryArticles[4].CreatedAt.ToString(" s")">
+                @sameCatergoryArticles[4].GetDisplayTime()
+              </time>
+            </span>
+          </div>
+          <div class="sapo_news mar_bottom20">
+            @sameCatergoryArticles[4].Headlines
+          </div>
+          <a href="/@sameCatergoryArticles[4].Category.Url/@sameCatergoryArticles[4].FriendlyTitle" class="thumbblock">
+            <img style="background: #ececec"
+                 src="@sameCatergoryArticles[4].Thumbnail"
+                 class="unload-image"
+                 data-src="@sameCatergoryArticles[4].Thumbnail"
+                 title="@sameCatergoryArticles[4].Title">
+          </a>
+        </div>
+      }
+
+      @for (int i = 5; i < sameCatergoryArticles.Count && i < 7; i++)
+      {
+        <div class="box_vertical pkg">
+          <div class="module-thumb">
+            <a href="/@sameCatergoryArticles[i].Category.Url/@sameCatergoryArticles[i].FriendlyTitle" class="thumb16x9 fl">
+              <img style="background: #ececec" src="@sameCatergoryArticles[i].Thumbnail"
+                   class="unload-image"
+                   data-src="@sameCatergoryArticles[i].Thumbnail"
+                   title="@sameCatergoryArticles[i].Title">
+            </a>
+          </div>
+          <div class="info_vertical_news fl">
+            <h3>
+              <a href="/@sameCatergoryArticles[i].Category.Url/@sameCatergoryArticles[i].FriendlyTitle" class="title_cate fontOPB">
+                @sameCatergoryArticles[i].Title
+              </a>
+            </h3>
+            <div class="time_cate">
+              <a href="/@sameCatergoryArticles[i].Category.Url/" class="tag_cate fontOPB">
+                @sameCatergoryArticles[i].Category.Name
+              </a> - <span class="time_news fontOP">
+                <time class="time-ago" datetime="@sameCatergoryArticles[i].CreatedAt.ToString(" s")">
+                  @sameCatergoryArticles[i].GetDisplayTime()
+                </time>
+              </span>
+            </div>
+            <div class="sapo_news limit_sapo_new2"> @sameCatergoryArticles[i].Headlines </div>
+          </div>
+        </div>
+      }
+
+      <div class="box_vertical box_vertical_2col pkg">
+        @if (sameCatergoryArticles.Count >= 8)
+        {
+          <div class="col440 fl">
+            <h3>
+              <a href="/@sameCatergoryArticles[7].Category.Url/@sameCatergoryArticles[7].FriendlyTitle"
+                 class="title_cate fontOPB mar_bottom15">
+                @sameCatergoryArticles[7].Title
+              </a>
+            </h3>
+            <div class="module-thumb">
+              <a href="/@sameCatergoryArticles[7].Category.Url/@sameCatergoryArticles[7].FriendlyTitle" class="thumb16x9">
+                <img style="background: #ececec" src="@sameCatergoryArticles[7].Thumbnail"
+                     class="unload-image"
+                     data-src="@sameCatergoryArticles[7].Thumbnail"
+                     title="@sameCatergoryArticles[7].Title">
+              </a>
+            </div>
+            <div class="info_news_485 fl">
+              <div class="time_cate">
+                <a href="/@sameCatergoryArticles[7].Category.Url/" class="tag_cate fontOPB">
+                  @sameCatergoryArticles[7].Category.Name
+                </a> - <span class="time_news fontOP">
+                  <time class="time-ago" datetime="@sameCatergoryArticles[7].CreatedAt.ToString(" s")">
+                    @sameCatergoryArticles[7].GetDisplayTime()
+                  </time>
+                </span>
+              </div>
+              <div class="sapo_news limit_sapo_new4"> @sameCatergoryArticles[7].Headlines </div>
+            </div>
+          </div>
+        }
+        @if (sameCatergoryArticles.Count >= 9)
+        {
+          <div class="col220 fr">
+            <a href="/@sameCatergoryArticles[8].Category.Url/" class="tag_cate fontOPB">
+              @sameCatergoryArticles[8].Category.Name
+            </a> - <span class="time_news fontOP">
+              <time class="time-ago" datetime="@sameCatergoryArticles[8].CreatedAt.ToString(" s")">
+                @sameCatergoryArticles[8].GetDisplayTime()
+              </time>
+            </span>
+
+            <h3 class="mar_bottom10">
+              <a href="/@sameCatergoryArticles[8].Category.Url/@sameCatergoryArticles[8].FriendlyTitle"
+                 class="f14 fontOPB mar_bottom10">@sameCatergoryArticles[8].Title</a>
+              </h3>
+              <div class="thumbblock thumb110x74 fl">
+                <a href="/@sameCatergoryArticles[8].Category.Url/@sameCatergoryArticles[8].FriendlyTitle" class="thumb16x9">
+                  <img style="background: #ececec" src="@sameCatergoryArticles[8].Thumbnail"
+                       class="unload-image"
+                       data-src="@sameCatergoryArticles[8].Thumbnail"
+                       title="@sameCatergoryArticles[8].Title">
+                </a>
+              </div>
+              <div class="sapo_news f13">
+                @sameCatergoryArticles[8].Headlines
+              </div>
+            </div>
+          }
+      </div>
+
+      @for (int i = 9; i < sameCatergoryArticles.Count && i < 20; i++)
+      {
+        <div class="box_vertical pkg">
+          <div class="module-thumb">
+            <a class="thumb16x9 fl">
+              <img style="background: #ececec"
+                   src="../../../assets/data/themes/saostarv4/assets/images/banner_loading.gif"
+                   class="unload-image"
+                   data-src="@sameCatergoryArticles[i].Thumbnail"
+                   title="@sameCatergoryArticles[i].Title">
+            </a>
+          </div>
+          <div class="info_vertical_news fl">
+            <h3>
+              <a href="/@sameCatergoryArticles[i].Category.Url/@sameCatergoryArticles[i].FriendlyTitle"
+                 class="title_cate fontOPB">
+                @sameCatergoryArticles[i].Title
+              </a>
+            </h3>
+            <div class="time_cate">
+              <a href="/@sameCatergoryArticles[i].Category.Url/" class="tag_cate fontOPB">
+                @sameCatergoryArticles[i].Category.Name
+              </a> - <span class="time_news fontOP">
+                <time class="time-ago" datetime="@sameCatergoryArticles[i].CreatedAt.ToString(" s")">
+                  @sameCatergoryArticles[i].GetDisplayTime()
+                </time>
+              </span>
+            </div>
+            <div class="sapo_news limit_sapo_new2"> @sameCatergoryArticles[i].Headlines </div>
+          </div>
+        </div>
+      }
+
     </div>
+  </div>
+  <div class="col300 fr">
+    <div class="ss-spacer">
+      <div class="ss-sidebar">
+        <div id='div-gpt-ad-1478236013072-0' class="qcao">
+          <a href="#"><img alt="" src="../../../assets/pic/qc5.png" /></a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 
 <div class="pkg grid1000 mar_bottom30 mar_top30">
-    <div class="bannerhome ">
-        <div id='div-gpt-ad-1478165578373-4' class="qcao" style='width:1000px;'>
-            <a href="#"><img alt="" src="../../../assets/pic/qc7.png" /></a>
-        </div>
+  <div class="bannerhome ">
+    <div id='div-gpt-ad-1478165578373-4' class="qcao" style='width:1000px;'>
+      <a href="#"><img alt="" src="../../../assets/pic/qc7.png" /></a>
     </div>
+  </div>
 </div>

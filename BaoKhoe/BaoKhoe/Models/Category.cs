@@ -12,9 +12,12 @@ namespace BaoKhoe.Models
         /// Tên của Cate
         /// </summary>
         public string Name { get; set; }
+        [MaxLength(50), Column(TypeName = "CHAR")]
         public string FriendlyName { get; set; }
+        [MaxLength(50), Column(TypeName = "CHAR")]
         public string Url { get; set; }
         public string Descriptions { get; set; }
+        [MaxLength(20), Column(TypeName = "NCHAR")]
         public string Status { get; set; }
         public List<Category> SubCategories { get; set; }
         public bool IsSubCategory { get; set; }

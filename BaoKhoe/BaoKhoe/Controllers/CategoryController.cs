@@ -59,6 +59,7 @@ namespace BaoKhoe.Controllers
                     .Take(3)
                     .ToList();
                 ViewBag.HotArticles = articles1;
+
                 List<Article> articles = _appDbContext.Articles
                     .Where(x => x.Category.Id == category.Id || subIds.Contains("/" + x.Category.Url + "/"))
                     .OrderByDescending(x => x.CreatedAt)
@@ -81,10 +82,7 @@ namespace BaoKhoe.Controllers
                 ViewBag.NewestArticles = articles;
                 return View();
             }
-            else
-            {
-                return Redirect("/Error404");
-            }
+            return Redirect("/Error404");
         }
 
         // load more article

@@ -1592,8 +1592,7 @@ ul.menu_main > li:first-child a{
 
 .bg_footer {
     border-top: 5px solid #00B700;
-    background: #333;
-    padding: 40px 0
+    padding: 20px 0
 }
 
 .footer_right {
@@ -1678,13 +1677,10 @@ ul.menu_main > li:first-child a{
     width: 100%;
     z-index: 2;
     height: 250px background: rgba(255, 255, 255, 0);
-    background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 1) 100%);
-    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(100%, rgba(0, 0, 0, 1)));
-    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 1) 100%);
-    background: -o-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 1) 100%);
-    background: -ms-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 1) 100%);
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 1) 100%);
-    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000', GradientType=0);
+    background-color: hsl(2, 57%, 40%);
+    background-image: repeating-linear-gradient(transparent, transparent 50px, rgba(0,0,0,.4) 50px, rgba(0,0,0,.4) 53px, transparent 53px, transparent 63px, rgba(0,0,0,.4) 63px, rgba(0,0,0,.4) 66px, transparent 66px, transparent 116px, rgba(0,0,0,.5) 116px, rgba(0,0,0,.5) 166px, rgba(255,255,255,.2) 166px, rgba(255,255,255,.2) 169px, rgba(0,0,0,.5) 169px, rgba(0,0,0,.5) 179px, rgba(255,255,255,.2) 179px, rgba(255,255,255,.2) 182px, rgba(0,0,0,.5) 182px, rgba(0,0,0,.5) 232px, transparent 232px),
+                      repeating-linear-gradient(270deg, transparent, transparent 50px, rgba(0,0,0,.4) 50px, rgba(0,0,0,.4) 53px, transparent 53px, transparent 63px, rgba(0,0,0,.4) 63px, rgba(0,0,0,.4) 66px, transparent 66px, transparent 116px, rgba(0,0,0,.5) 116px, rgba(0,0,0,.5) 166px, rgba(255,255,255,.2) 166px, rgba(255,255,255,.2) 169px, rgba(0,0,0,.5) 169px, rgba(0,0,0,.5) 179px, rgba(255,255,255,.2) 179px, rgba(255,255,255,.2) 182px, rgba(0,0,0,.5) 182px, rgba(0,0,0,.5) 232px, transparent 232px),
+                      repeating-linear-gradient(125deg, transparent, transparent 2px, rgba(0,0,0,.2) 2px, rgba(0,0,0,.2) 3px, transparent 3px, transparent 5px, rgba(0,0,0,.2) 5px);
 }
 
 .trending_top {
@@ -4424,22 +4420,18 @@ a.show-all-reply:hover{
 
 .contact-footer{
     float: left;
-    color: #fff;
     width: 30%;
     padding: 0 30px; 
 }
 .logo-footer{
-    width: 40%;
+    width: 35%;
     float: left;
-    padding-right: 30px;
-    color: #fff;
 }
 
 .info-footer{
     float: left;
     width: 30%;
-    color: #fff;
-    padding-left: 30px;
+    padding: 0 20px;
 }
 
 .address-footer{
@@ -4449,9 +4441,7 @@ a.show-all-reply:hover{
 .address-footer h2, .contact-footer h2{
     text-transform: uppercase;
 }
-.address-footer p, .contact-footer p, .info-footer li, .contact-footer li{
-    color: #c5c5c5;
-}
+
 .map{
     background: url(../../../../../data/themes/saostarv4/assets/images/map.png) left no-repeat;
     padding-left: 15px;
@@ -4462,7 +4452,6 @@ a.show-all-reply:hover{
 
 .border-fo{
     border-right: 1px solid #5b5b5b;
-    min-height: 302px;
 }
 .name-gd{
     text-transform: uppercase;
@@ -5023,3 +5012,72 @@ ul.menu_main li {
         .ul-sub-cate .li-sub-cate.active a {
             border-bottom: 3px solid #fff;
         }
+
+
+footer .logo-footer {
+    text-align: center;
+    min-height: 120px;
+}
+footer .logo-footer h3 {
+    font-size: 18px;
+}
+
+footer .info-footer {
+    min-height: 120px;
+}
+
+footer .social-footer {
+    width: 30%;
+    float: left;
+    padding: 0 20px;
+    min-height: 120px;
+}
+.title_cate_special.interested-posts {
+    padding: 7px;
+}
+    .title_cate_special.interested-posts .title_cate_home {
+        display: inline-block;
+        padding-left: 5px;
+    }
+    .title_cate_special.interested-posts .title_cate_home h3 {
+        font-size: 18px;
+    }
+    .title_cate_special.interested-posts .fr {
+        margin-top: 2px;
+        display: inline-block;
+        float: right;
+    }
+    .title_cate_special.interested-posts .fr a {
+        font-style: italic;
+    }
+
+#menu li.out-of-range {
+    display: none;
+}
+#menu li .expand-parent-menu {
+    display: none;
+    color: #fff;
+    position: absolute;
+    font-size: 20px;
+    right: 10px;
+    width: 30px;
+    height: 35px;
+    padding: 6px;
+    top: 0;
+}
+#menu li .expand-ul-sub-cate {
+    display: none;
+}
+    #menu li .expand-ul-sub-cate .expand-li-sub-cate {
+        width: 100%;
+        padding-left: 20px;
+    }
+    #menu li .expand-ul-sub-cate .expand-li-sub-cate:first-child a {
+        padding-top: 0 !important;
+    }
+    #menu li .expand-ul-sub-cate .expand-li-sub-cate:last-child a {
+        padding-bottom: 6px !important;
+    }
+    #menu li .expand-ul-sub-cate .expand-li-sub-cate a {
+        padding-bottom: 0 !important;
+    }

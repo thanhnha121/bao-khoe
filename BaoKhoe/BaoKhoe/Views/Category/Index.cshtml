@@ -4,7 +4,7 @@
     List<Article> hotArticles = ViewBag.HotArticles == null ? new List<Article>() : ViewBag.HotArticles;
     List<Article> newestArticles = ViewBag.NewestArticles == null ? new List<Article>() : ViewBag.NewestArticles;
 
-    ViewBag.Title = category.Name + " - Sức Khỏe 24 Giờ - Trang Thông Tin Y Tế Sức Khỏe Cho Cộng Đồng";
+    ViewBag.Title = category.Name + " - Sức Khỏe 24 Giờ - Sức Khỏe Gia Đình, cách Phòng Bệnh & chăm sóc";
 }
 
 <div class="bg_top_cate mar_bottom30">
@@ -142,7 +142,7 @@
                 <div id='div-gpt-ad-1478165578373-21' class="qcao" style='height:250px; width:300px;'>
                     <a href="#"><img alt="" src="../../../assets/pic/qc6.png" /></a>
                 </div>
-                <div class="fb-fanbox-wrapper"><div class="fb-page" data-href="https://www.facebook.com/saostar.vn/" data-width="300" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/saostar.vn/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/saostar.vn/">SaoStar</a></blockquote></div></div>
+              @RenderPage("~/Views/FacebookFanpage/Page.cshtml", null)
             </div>
         </div>
     </div>

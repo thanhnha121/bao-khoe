@@ -9,15 +9,17 @@ namespace BaoKhoe.Models
     {
         [Key]
         public int Id { get; set; }
-        [MaxLength(256), Required, Column(TypeName = "NVARCHAR")]
+        [MaxLength(255), Required, Column(TypeName = "NVARCHAR")]
         public string Title { get; set; }
         /// <summary>
         /// Short title
         /// </summary>
+        [MaxLength(1024), Column(TypeName = "NVARCHAR")]
         public string SubTitle { get; set; }
         /// <summary>
         /// Vắn tắt
         /// </summary>
+        [MaxLength(1024), Column(TypeName = "NVARCHAR")]
         public string Headlines { get; set; }
         /// <summary>
         /// Nội dung
@@ -33,23 +35,29 @@ namespace BaoKhoe.Models
         /// <summary>
         /// Nguồn, clone từ trang nào
         /// </summary>
+        [MaxLength(128), Column(TypeName = "CHAR")]
         public string Source { get; set; }
+        [MaxLength(255), Column(TypeName = "CHAR")]
         public string SourceUrl { get; set; }
         /// <summary>
         /// Title thu dạng không dấu VD: title-dang-khong-dau
         /// </summary>
+        [MaxLength(255), Column(TypeName = "CHAR")]
         public string FriendlyTitle { get; set; }
         /// <summary>
         /// Tên tác giả
         /// </summary>
+        [MaxLength(128), Column(TypeName = "NCHAR")]
         public string AuthorAlias { get; set; }
         /// <summary>
         /// Trạng thái bài viết
         /// </summary>
+        [MaxLength(20), Column(TypeName = "NCHAR")]
         public string Status { get; set; }
         /// <summary>
         /// Ảnh thu nhỏ
         /// </summary>
+        [MaxLength(1024), Column(TypeName = "VARCHAR")]
         public string Thumbnail { get; set; }
         [NotMapped]
         public List<Article> RelatedArticles { get; set; }

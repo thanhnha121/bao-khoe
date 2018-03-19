@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BaoKhoe.Models
 {
@@ -12,6 +13,7 @@ namespace BaoKhoe.Models
         /// <summary>
         /// Loại bài đăng: hot || trend
         /// </summary>
+        [MaxLength(20), Column(TypeName = "NCHAR")]
         public string Type { get; set; }
         public DateTime FromDate { get; set; }
         public DateTime ToDate { get; set; }
