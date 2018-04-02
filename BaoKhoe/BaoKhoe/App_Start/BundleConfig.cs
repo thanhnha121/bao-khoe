@@ -32,7 +32,7 @@ namespace BaoKhoe
                         ));
 
             bundles.Add(new StyleBundle("~/bundles/style").Include(
-                      "~/assets/data/themes/saostarv4/assets/vendors/videojs/video-js.min.cs",
+                      "~/assets/data/themes/saostarv4/assets/vendors/videojs/video-js.min.css",
                       "~/assets/data/themes/saostarv4/assets/vendors/videojs/videojs.ads.css",
                       "~/assets/data/themes/saostarv4/assets/vendors/videojs/videojs.ima.css",
                       "~/assets/data/themes/saostarv4/assets/css/fonts.min.css",
