@@ -82,7 +82,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/15/2018 09:22:02</publishTime>
     </File>
     <File Include="assets/data/themes/saostarv4/assets/css/style.css">
-      <publishTime>04/15/2018 11:06:27</publishTime>
+      <publishTime>04/15/2018 16:37:42</publishTime>
     </File>
     <File Include="assets/data/themes/saostarv4/assets/images/arr-red.png">
       <publishTime>02/22/2018 23:29:11</publishTime>
@@ -382,10 +382,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/22/2018 23:29:11</publishTime>
     </File>
     <File Include="bin/BaoKhoe.dll">
-      <publishTime>04/15/2018 16:22:22</publishTime>
+      <publishTime>04/15/2018 16:37:51</publishTime>
     </File>
     <File Include="bin/BaoKhoe.pdb">
-      <publishTime>04/15/2018 16:22:22</publishTime>
+      <publishTime>04/15/2018 16:37:51</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>02/22/2018 23:29:14</publishTime>
@@ -703,7 +703,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/22/2018 23:29:11</publishTime>
     </File>
     <File Include="Views/Detail/Index.cshtml">
-      <publishTime>04/15/2018 16:22:10</publishTime>
+      <publishTime>04/15/2018 16:34:01</publishTime>
     </File>
     <File Include="Views/Detail/_IndexPartial.cshtml">
       <publishTime>04/15/2018 11:02:58</publishTime>
@@ -715,7 +715,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/15/2018 09:50:13</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>04/15/2018 10:59:47</publishTime>
+      <publishTime>04/15/2018 16:36:55</publishTime>
     </File>
     <File Include="Views/Home/_IndexPartial.cshtml">
       <publishTime>04/15/2018 09:57:28</publishTime>
@@ -748,7 +748,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/22/2018 23:29:11</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>04/15/2018 16:22:28</publishTime>
+      <publishTime>04/15/2018 16:38:03</publishTime>
     </File>
   </ItemGroup>
 </Project>

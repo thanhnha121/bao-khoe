@@ -5141,3 +5141,7 @@ footer .social-footer {
     width: 1000px;
     margin: 0 auto;
 }
+
+.none-background {
+    background: none;
+}
