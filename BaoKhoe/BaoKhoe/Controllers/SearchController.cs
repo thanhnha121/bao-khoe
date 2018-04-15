@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using BaoKhoe.Models;
 
@@ -18,7 +17,7 @@ namespace BaoKhoe.Controllers
         }
 
         // GET: Tag
-        [OutputCache(Duration = 1200, VaryByParam = "url")]
+        // [OutputCache(Duration = 1200, VaryByParam = "url")]
         public ActionResult Index(string url)
         {
             string[] input = url.Split('/');

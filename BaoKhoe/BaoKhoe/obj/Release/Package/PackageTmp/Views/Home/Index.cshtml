@@ -1,8 +1,6 @@
 ﻿@using BaoKhoe.Models
 @{
   ViewBag.Title = "Suckhoe24gio - Sức Khỏe Gia Đình, cách Phòng Bệnh & chăm sóc";
-  List<Category>
-  categories = ViewBag.Categories != null ? ViewBag.Categories : new List<Category>();
   List<AssignedArticle>
       articlesHot = ViewBag.ArticlesHot != null ? ViewBag.ArticlesHot : new List<AssignedArticle>();
   List<AssignedArticle>
@@ -30,6 +28,7 @@
     top5 = articlesHot.GetRange(0, 5).ToList();
     articlesHot.RemoveRange(0, 5);
   }
+  List<Article> hotArticles = ViewBag.HotArticles == null ? new List<Article>() : ViewBag.HotArticles;
 }
 <div class="bg_top grid1000 poslide qcao">
   <a href="#"><img alt="" src="/assets/pic/qc1.png" /></a>
@@ -39,7 +38,7 @@
 {
   <div class="height_hotnews pkg">
     <div class="grid1000">
-      <div class="hot_news pkg">
+      <div class="hot_news pkg article-class" data-id="@top1.Article.Id">
         <div class="module-thumb thumb_hotnews fl">
           <a href="@('/' + top1.Article.Category.Url + '/' + top1.Article.FriendlyTitle)" class="thumb16x9 thumbblock">
             <img style="background:#ececec" src="@top1.Article.Thumbnail" title="@top1.Article.Title" width="470" height="264">
@@ -69,7 +68,7 @@
       <ul class="list_news_three pkg">
         @foreach (var assignedArticle in top3)
         {
-          <li>
+          <li class="article-class" data-id="@assignedArticle.Article.Id">
             <a href="@('/' + assignedArticle.Article.Category.Url + '/' + assignedArticle.Article.FriendlyTitle)" class="thumb16x9 ">
               <img style="background: #ececec" src="@assignedArticle.Article.Thumbnail"
                    title="@assignedArticle.Article.Title" width="206" height="116">
@@ -95,7 +94,7 @@
       {
         foreach (var assignedArticle in top5)
         {
-          <div class="box_vertical pkg">
+          <div class="box_vertical pkg article-class" data-id="@assignedArticle.Article.Id">
             <div class="module-thumb">
               <a href="@('/' + assignedArticle.Article.Category.Url + '/' + assignedArticle.Article.FriendlyTitle)" class="thumb16x9 fl">
                 <img style="background: #ececec" src="@assignedArticle.Article.Thumbnail"
@@ -128,7 +127,7 @@
       <div class="box_vertical box_vertical_2col pkg">
         @if (articlesHot != null && articlesHot.Count > 0)
         {
-          <div class="col440 fl">
+          <div class="col440 fl article-class" data-id="@articlesHot[0].Article.Id">
             <span class="subtitle">
               <a href="@('/' + articlesHot[0].Article.Category.Url + '/' + articlesHot[0].Article.FriendlyTitle)">
                 @articlesHot[0].Article.Category.Name
@@ -162,7 +161,7 @@
 
         @if (articlesHot != null && articlesHot.Count > 1)
         {
-          <div class="col220 fr">
+          <div class="col220 fr article-class" data-id="@articlesHot[1].Article.Id">
             <div class="time_cate">
               <a href="@('/' + articlesHot[1].Article.Category.Url)" class="tag_cate fontOPB">
                 @articlesHot[1].Article.Category.Name
@@ -190,7 +189,7 @@
 
       @if (articlesHot != null && articlesHot.Count > 2)
       {
-        <div class="box_vertical pkg">
+        <div class="box_vertical pkg article-class" data-id="@articlesHot[2].Article.Id">
           <div class="module-thumb">
             <a href="@('/' + articlesHot[2].Article.Category.Url + '/' + articlesHot[2].Article.FriendlyTitle)" class="thumb16x9 fl">
               <img style="background: #ececec" src="@articlesHot[2].Article.Thumbnail"
@@ -323,7 +322,7 @@
               }
 
           .title_cate_special {
-            background-color: #ed1c24;
+            background-color: #d2691e;
             height: 40px;
             padding: 10px;
             color: #fff;
@@ -359,7 +358,7 @@
             else
             {
               <div class="item">
-                <div class="module-thumb thumb270">
+                <div class="module-thumb thumb270 article-class" data-id="@articlesSpecial[i * 2].Article.Id">
                   <a href="@("/" + articlesSpecial[i * 2].Article.Category.Url + "/" + articlesSpecial[i * 2].Article.FriendlyTitle)" class="thumb16x9">
                     <img style="background: #ececec" src="@articlesSpecial[i * 2].Article.Thumbnail"
                          title="@articlesSpecial[i * 2].Article.Title" width="270" height="152">
@@ -371,7 +370,7 @@
                   </a>
                 </h3>
                 <div style="margin-bottom: 20px;"></div>
-                <div class="module-thumb thumb260">
+                <div class="module-thumb thumb260 article-class" data-id="@articlesSpecial[(i * 2) + 1].Article.Id">
                   <a href="@("/" + articlesSpecial[(i * 2) + 1].Article.Category.Url + "/" + articlesSpecial[(i * 2) + 1].Article.FriendlyTitle)" class="thumb16x9">
                     <img style="background: #ececec"
                          src="@articlesSpecial[(i * 2) + 1].Article.Thumbnail"
@@ -403,7 +402,7 @@
             <ul class="list_news_update">
               @foreach (Article article in articlesTopView)
               {
-                <li>
+                <li class="article-class" data-id="@article.Id">
                   <h4><a href="@("/" + article.Category.Url + "/" + article.FriendlyTitle)">@article.Title</a></h4>
                   <div class="time_cate">
                     <a href="/@article.Category.Url" class="tag_cate fontOPB">@article.Category.Name</a> - <span class="time_news fontOP">
@@ -415,121 +414,25 @@
             </ul>
           </div>
         </div>
-        <script type="text/javascript">$(document).on('ready', function () { var recent_news = new IScroll('#scrol_news_update', { mouseWheel: true, scrollbars: true, interactiveScrollbars: true, }); });</script>
+        <script type="text/javascript">
+          $(document).on('ready', function () { var recent_news = new IScroll('#scrol_news_update', { mouseWheel: true, scrollbars: true, interactiveScrollbars: true, }); });
+        </script>
       </div>
     </div>
     <div class="line mar_top30 mar_bottom30"></div>
     <div class="line_bg mar_top40 mar_bottom40"></div>
-    @foreach (Category category in categories)
-    {
-      if (!category.IsSubCategory && category.Articles.Count >= 5)
-      {
-        <div class="pkg mar_bottom40">
-          <div class="title_cate_home bg_title_large mar_bottom10 f30 pkg">
-            <h3 class="f22 fl"><a href="/@category.Url/">@category.Name</a></h3>
-            <ul class="list_sub_cate fl">
-              @foreach (Category subCategory in category.SubCategories)
-              {
-                <li><a href="/@subCategory.Url/" title="Xem tất cả bài viết trong @subCategory.Name">@subCategory.Name</a></li>
-              }
-            </ul>
-          </div>
-          <hr class="line mar_bottom15 ">
-          <div class="col48_5per fl">
-            <div class="module-thumb mar_bottom10">
-              <a href="/@category.Url/@category.Articles[0].FriendlyTitle" class="thumb16x9">
-                <img style="background:#ececec"
-                     src="@category.Articles[0].Thumbnail"
-                     srcset="@category.Articles[0].Thumbnail"
-                     title="@category.Articles[0].Title">
-              </a>
-            </div>
-            <h4 class="mar_bottom10">
-              <a href="/@category.Url/@category.Articles[0].FriendlyTitle" class="fontOPB f18">
-                @category.Articles[0].Title
-              </a>
-            </h4>
-            <div class="sapo_news f13-5 limit_sapo_new4">
-              @category.Articles[0].Headlines
-            </div>
-          </div>
-          <div class="col48_5per fr">
-            <ul class="list_news_show_home">
-              <li class="first pkg">
-                <div class="subcatnho"></div>
-                <div class="module-thumb thumb142x80 fl">
-                  <a href="/@category.Url/@category.Articles[1].FriendlyTitle" class="thumb16x9">
-                    <img style="background: #ececec"
-                         src="@category.Articles[1].Thumbnail"
-                         srcset="@category.Articles[1].Thumbnail"
-                         title="@category.Articles[1].Title" width="142" height="80">
-                  </a>
-                </div>
-                <h4 class="limit_sapo_new4">
-                  <a href="/@category.Url/@category.Articles[1].FriendlyTitle" class="f16 fontOPB">
-                    @category.Articles[1].Title
-                  </a>
-                </h4>
-              </li>
-              <li class="first pkg">
-                <div class="subcatnho"></div>
-                <div class="module-thumb thumb142x80 fl">
-                  <a href="/@category.Url/@category.Articles[2].FriendlyTitle" class="thumb16x9">
-                    <img style="background: #ececec"
-                         src="@category.Articles[2].Thumbnail"
-                         srcset="@category.Articles[2].Thumbnail"
-                         title="@category.Articles[2].Title">
-                  </a>
-                </div>
-                <h4 class="limit_sapo_new4">
-                  <a href="/@category.Url/@category.Articles[2].FriendlyTitle" class="f16 fontOPB">
-                    @category.Articles[2].Title
-                  </a>
-                </h4>
-              </li>
 
-              <li>
-                <h4>
-                  <a href="/@category.Url/@category.Articles[3].FriendlyTitle">
-                    @category.Articles[3].Title
-                  </a>
-                </h4>
-              </li>
-              <li>
-                <h4>
-                  <a href="/@category.Url/@category.Articles[4].FriendlyTitle">
-                    @category.Articles[4].Title
-                  </a>
-                </h4>
-              </li>
-            </ul>
-          </div>
-        </div>
-      }
-
-    }
-
-  </div>
-  <div class="col300 fr">
-    <div class="ss-spacer">
-      <div class="ss-sidebar">
-        <div id='div-gpt-ad-1478165578373-13' class="qcao">
-          <a href="#"><img alt="" src="/assets/pic/qc2.png" /></a>
-        </div>
-        <div id='div-gpt-ad-1478165578373-19' class="qcao" style='height:250px; width:300px;'>
-          <a href="#"><img alt="" src="/assets/pic/qc4.png" /></a>
-        </div>
-        <div id='div-gpt-ad-1478165578373-16' class="qcao">
-          <a href="#"><img alt="" src="/assets/pic/qc5.png" /></a>
-        </div>
-        <div id='div-gpt-ad-1478165578373-22' class="qcao" style='height:250px; width:300px;'>
-          <a href="#"><img alt="" src="/assets/pic/qc6.png" /></a>
-        </div>
-
-        @RenderPage("~/Views/FacebookFanpage/Page.cshtml", null)
-
-      </div>
+    <div id="index-partial">
+      @Html.Partial("~/Views/Shared/_LoadingLines.cshtml")
     </div>
   </div>
+
+  @Html.Partial("~/Views/Shared/_RightList.cshtml", hotArticles)
+
 </div>
 
+<script type="text/javascript">
+  $(document).ready(function () {
+    getIndexPartial();
+  });
+</script>

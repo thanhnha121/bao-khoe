@@ -17,8 +17,64 @@ namespace BaoKhoe.Controllers
         }
 
         // GET: Detail
-        [OutputCache(Duration = 86000, VaryByParam = "url")]
+        // [OutputCache(Duration = 86000, VaryByParam = "url")]
         public ActionResult Index(string url)
+        {
+            string[] input = url.Split('/');
+            ViewBag.Categories = _appDbContext.Categories
+                .Include(x => x.SubCategories)
+                .ToList();
+
+            string tmp = input[0];
+            Category category = _appDbContext.Categories.FirstOrDefault(x => x.Url.Equals(tmp.ToLower().Trim()));
+            if (category == null)
+            {
+                return Redirect("/Error404");
+            }
+
+            if (input.Length < 2)
+            {
+                return Redirect("/Error404");
+            }
+            string friendlyTitle = input[1];
+            Article article =
+                _appDbContext.Articles
+                    .Include(x => x.Category)
+                    .FirstOrDefault(x => x.FriendlyTitle.Equals(friendlyTitle.ToLower().Trim()));
+
+            if (article != null)
+            {
+                DateTime date = DateTime.Now.AddDays(-14);
+                List<Article> hotArticles = _appDbContext.Articles
+                    .Where(x => x.CreatedAt > date)
+                    .OrderByDescending(x => x.ViewCount)
+                    .ThenByDescending(x => x.CreatedAt)
+                    .Include(x => x.Category)
+                    .Take(10)
+                    .ToList();
+                ViewBag.HotArticles = hotArticles;
+
+                article.ListKeywords = _appDbContext.ArticleKeywords
+                    .Where(y => y.Article.Id == article.Id)
+                    .Select(x => x.Keyword).ToList();
+                article.RelatedArticles = _appDbContext.RelatedArticles
+                    .Where(x => x.Origin.Id == article.Id)
+                    .OrderByDescending(x => x.Index)
+                    .Take(3)
+                    .Select(x => x.Related).ToList();
+
+                article.ViewCount++;
+                ViewBag.Article = article;
+                _appDbContext.SaveChanges();
+                return View();
+            }
+            return Redirect("/Error404");
+        }
+
+        // GET: Detail Partial
+        // [OutputCache(Duration = 86000, VaryByParam = "url")]
+        [HttpPost]
+        public ActionResult IndexPartial(string url)
         {
             string[] input = url.Split('/');
             DateTime date = DateTime.Now;
@@ -37,65 +93,50 @@ namespace BaoKhoe.Controllers
             {
                 return Redirect("/Error404");
             }
-            else
-            {
-                string friendlyTitle = input[1];
-                Article article =
-                    _appDbContext.Articles
+            string friendlyTitle = input[1];
+            Article article =
+                _appDbContext.Articles
                     .Include(x => x.Category)
                     .FirstOrDefault(x => x.FriendlyTitle.Equals(friendlyTitle.ToLower().Trim()));
 
-                if (article != null)
+            if (article != null)
+            {
+                article.ViewCount++;
+                ViewBag.Article = article;
+                DateTime checkDate = date.AddDays(-14);
+
+                List<Article> articles1 = _appDbContext.Articles
+                    .Where(x => x.CreatedAt > checkDate && x.Id != article.Id)
+                    .OrderByDescending(x => x.ViewCount)
+                    .Include(x => x.Category)
+                    .Take(6)
+                    .ToList();
+                List<Article> articles2 = _appDbContext.Articles
+                    .Where(x => x.Category.Id == article.Category.Id && x.Id != article.Id)
+                    .OrderByDescending(x => x.CreatedAt)
+                    .Include(x => x.Category)
+                    .Take(26)
+                    .ToList();
+
+                for (int i = 0; i < articles2.Count; i++)
                 {
-                    article.ListKeywords = _appDbContext.ArticleKeywords
-                        .Where(y => y.Article.Id == article.Id)
-                        .Select(x => x.Keyword).ToList();
-                    article.RelatedArticles = _appDbContext.RelatedArticles
-                        .Where(x => x.Origin.Id == article.Id)
-                        .OrderByDescending(x => x.Index)
-                        .Take(3)
-                        .Select(x => x.Related).ToList();
-
-                    article.ViewCount++;
-                    ViewBag.Article = article;
-                    DateTime checkDate = date.AddDays(-14);
-
-                    List<Article> articles1 = _appDbContext.Articles
-                        .Where(x => x.CreatedAt > checkDate && x.Id != article.Id)
-                        .OrderByDescending(x => x.ViewCount)
-                        .Include(x => x.Category)
-                        .Take(6)
-                        .ToList();
-                    List<Article> articles2 = _appDbContext.Articles
-                        .Where(x => x.Category.Id == article.Category.Id && x.Id != article.Id)
-                        .OrderByDescending(x => x.CreatedAt)
-                        .Include(x => x.Category)
-                        .Take(26)
-                        .ToList();
-
-                    for (int i = 0; i < articles2.Count; i++)
+                    foreach (Article t in articles1)
                     {
-                        foreach (Article t in articles1)
+                        if (articles2[i].Id == t.Id)
                         {
-                            if (articles2[i].Id == t.Id)
-                            {
-                                articles2.RemoveAt(i);
-                                i--;
-                                break;
-                            }
+                            articles2.RemoveAt(i);
+                            i--;
+                            break;
                         }
                     }
-                    ViewBag.HotArticles = articles1;
-                    ViewBag.SameCatergoryArticles = articles2;
-                    _appDbContext.SaveChanges();
+                }
+                ViewBag.HotArticles = articles1;
+                ViewBag.SameCategoryArticles = articles2;
+                _appDbContext.SaveChanges();
 
-                    return View();
-                }
-                else
-                {
-                    return Redirect("/Error404");
-                }
+                return PartialView("~/Views/Detail/_IndexPartial.cshtml");
             }
+            return Redirect("/Error404");
         }
     }
 }

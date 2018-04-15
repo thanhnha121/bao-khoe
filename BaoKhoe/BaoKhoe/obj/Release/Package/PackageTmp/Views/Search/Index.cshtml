@@ -79,53 +79,9 @@
     }
 
   </div>
-  <div class="col300 fr">
-    <div class="ss-spacer">
-      <div class="ss-sidebar">
-        <div id='div-gpt-ad-1478165578373-12' class="qcao">
-          <a href="#"><img alt="" src="../../../assets/pic/qc2.png" /></a>
-        </div>
-        <div id='div-gpt-ad-1478165578373-18' class="qcao" style='height:250px; width:300px;'>
-          <a href="#"><img alt="" src="../../../assets/pic/qc4.png" /></a>
-        </div>
-        <div id='div-gpt-ad-1478165578373-15' class="qcao">
-          <a href="#"><img alt="" src="../../../assets/pic/qc5.png" /></a>
-        </div>
-        <div id='div-gpt-ad-1478165578373-21' class="qcao" style='height:250px; width:300px;'>
-          <a href="#"><img alt="" src="../../../assets/pic/qc6.png" /></a>
-        </div>
-        <div class="block-title fontOP"><span>ĐƯỢC QUAN TÂM NHIỀU</span></div>
+  
+  @Html.Partial("~/Views/Shared/_RightList.cshtml", hotArticles)
 
-        @foreach (Article article in hotArticles)
-        {
-          <div class="sidenews pkg">
-            <div class="thumb142x80 fl">
-              <a href="/@article.Category.Url/@article.FriendlyTitle"
-                 rel="bookmark"
-                 title="@article.Title" class="thumb16x9">
-                <img style="background: #ececec"
-                     src="@article.Thumbnail"
-                     srcset="@article.Thumbnail"
-                     title="@article.Title" width="142" height="80">
-              </a>
-            </div><div class="item-details">
-              <h4 class="limit_sapo_new4">
-                <a href="/@article.Category.Url/@article.FriendlyTitle"
-                   rel="bookmark"
-                   title="@article.Title"
-                   class="f14 fontOPSB">
-                  @article.Title
-                </a>
-              </h4>
-            </div>
-          </div>
-        }
-
-        @RenderPage("~/Views/FacebookFanpage/Page.cshtml", null)
-
-      </div>
-    </div>
-  </div>
 </div>
 
 <div class="pkg grid1000 mar_bottom20">

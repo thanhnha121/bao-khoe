@@ -1,0 +1,91 @@
+﻿@using BaoKhoe.Models
+@model List<Category>
+
+@foreach (Category category in Model)
+{
+  if (!category.IsSubCategory && category.Articles.Count >= 5)
+  {
+    <div class="pkg mar_bottom40">
+      <div class="title_cate_home bg_title_large mar_bottom10 f30 pkg">
+        <h3 class="f22 fl"><a href="/@category.Url/">@category.Name</a></h3>
+        <ul class="list_sub_cate fl">
+          @foreach (Category subCategory in category.SubCategories)
+          {
+            <li><a href="/@subCategory.Url/" title="Xem tất cả bài viết trong @subCategory.Name">@subCategory.Name</a></li>
+          }
+        </ul>
+      </div>
+      <hr class="line mar_bottom15 ">
+      <div class="col48_5per fl">
+        <div class="module-thumb mar_bottom10">
+          <a href="/@category.Url/@category.Articles[0].FriendlyTitle" class="thumb16x9">
+            <img style="background:#ececec"
+                 src="@category.Articles[0].Thumbnail"
+                 srcset="@category.Articles[0].Thumbnail"
+                 title="@category.Articles[0].Title">
+          </a>
+        </div>
+        <h4 class="mar_bottom10">
+          <a href="/@category.Url/@category.Articles[0].FriendlyTitle" class="fontOPB f18">
+            @category.Articles[0].Title
+          </a>
+        </h4>
+        <div class="sapo_news f13-5 limit_sapo_new4">
+          @category.Articles[0].Headlines
+        </div>
+      </div>
+      <div class="col48_5per fr">
+        <ul class="list_news_show_home">
+          <li class="first pkg">
+            <div class="subcatnho"></div>
+            <div class="module-thumb thumb142x80 fl">
+              <a href="/@category.Url/@category.Articles[1].FriendlyTitle" class="thumb16x9">
+                <img style="background: #ececec"
+                     src="@category.Articles[1].Thumbnail"
+                     srcset="@category.Articles[1].Thumbnail"
+                     title="@category.Articles[1].Title" width="142" height="80">
+              </a>
+            </div>
+            <h4 class="limit_sapo_new4">
+              <a href="/@category.Url/@category.Articles[1].FriendlyTitle" class="f16 fontOPB">
+                @category.Articles[1].Title
+              </a>
+            </h4>
+          </li>
+          <li class="first pkg">
+            <div class="subcatnho"></div>
+            <div class="module-thumb thumb142x80 fl">
+              <a href="/@category.Url/@category.Articles[2].FriendlyTitle" class="thumb16x9">
+                <img style="background: #ececec"
+                     src="@category.Articles[2].Thumbnail"
+                     srcset="@category.Articles[2].Thumbnail"
+                     title="@category.Articles[2].Title">
+              </a>
+            </div>
+            <h4 class="limit_sapo_new4">
+              <a href="/@category.Url/@category.Articles[2].FriendlyTitle" class="f16 fontOPB">
+                @category.Articles[2].Title
+              </a>
+            </h4>
+          </li>
+
+          <li>
+            <h4>
+              <a href="/@category.Url/@category.Articles[3].FriendlyTitle">
+                @category.Articles[3].Title
+              </a>
+            </h4>
+          </li>
+          <li>
+            <h4>
+              <a href="/@category.Url/@category.Articles[4].FriendlyTitle">
+                @category.Articles[4].Title
+              </a>
+            </h4>
+          </li>
+        </ul>
+      </div>
+    </div>
+  }
+
+}

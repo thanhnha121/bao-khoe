@@ -19,7 +19,7 @@ namespace BaoKhoe.Controllers
             _appDbContext = new AppDBContext();
         }
 
-        [OutputCache(Duration = 1200, VaryByParam = "none")]
+        // [OutputCache(Duration = 1200, VaryByParam = "none")]
         public ActionResult Index()
         {
             DateTime date = DateTime.Now.AddDays(-14);
@@ -49,6 +49,15 @@ namespace BaoKhoe.Controllers
                 .Take(10)
                 .ToList();
 
+            List<Article> hotArticles = _appDbContext.Articles
+                .Where(x => x.CreatedAt > date)
+                .OrderByDescending(x => x.ViewCount)
+                .ThenByDescending(x => x.CreatedAt)
+                .Include(x => x.Category)
+                .Take(10)
+                .ToList();
+            ViewBag.HotArticles = hotArticles;
+
             foreach (Category category in ViewBag.Categories)
             {
                 if (category.IsSubCategory)
@@ -68,6 +77,34 @@ namespace BaoKhoe.Controllers
 
             return View();
         }
+
+
+        // [OutputCache(Duration = 1200, VaryByParam = "none")]
+        [HttpPost]
+        public ActionResult IndexPartial(int[] listIds)
+        {
+            List<Category> model = _appDbContext.Categories
+                .Include(x => x.SubCategories)
+                .ToList();
+
+            foreach (Category category in model)
+            {
+                if (category.IsSubCategory)
+                {
+                    continue;
+                }
+                category.Articles = _appDbContext.Articles
+                    .Where(x => x.Category.Id == category.Id)
+                    .OrderByDescending(x => x.CreatedAt)
+                    .Include(x => x.Category)
+                    .Where(x => !listIds.Contains(x.Id))
+                    .Take(5)
+                    .ToList();
+            }
+            return PartialView("~/Views/Home/_IndexPartial.cshtml", model);
+        }
+
+
 
         public string GetSitemapDocument(IEnumerable<SitemapNode> sitemapNodes)
         {
@@ -176,7 +213,7 @@ namespace BaoKhoe.Controllers
             return nodes;
         }
 
-        [OutputCache(Duration = 86000, VaryByParam = "none")]
+        // [OutputCache(Duration = 86000, VaryByParam = "none")]
         public ActionResult SiteMap()
         {
             var sitemapNodes = GetSitemap();
@@ -184,7 +221,7 @@ namespace BaoKhoe.Controllers
             return Content(xml, "text/xml", Encoding.UTF8);
         }
 
-        [OutputCache(Duration = 86000, VaryByParam = "none")]
+        // [OutputCache(Duration = 86000, VaryByParam = "none")]
         public ActionResult SiteMapByMonth()
         {
             var sitemapNodes = GetSitemapByMonth();
@@ -192,7 +229,7 @@ namespace BaoKhoe.Controllers
             return Content(xml, "text/xml", Encoding.UTF8);
         }
 
-        [OutputCache(Duration = 86000, VaryByParam = "none")]
+        // [OutputCache(Duration = 86000, VaryByParam = "none")]
         public ActionResult SiteMapByCategory()
         {
             var sitemapNodes = GetSitemapByCategory();
@@ -200,7 +237,7 @@ namespace BaoKhoe.Controllers
             return Content(xml, "text/xml", Encoding.UTF8);
         }
 
-        [OutputCache(Duration = 86000, VaryByParam = "url")]
+        // [OutputCache(Duration = 86000, VaryByParam = "url")]
         public ActionResult SiteMapByMonthDetails(string url)
         {
             var sitemapNodes = GetSitemapByMonthDetails(url);

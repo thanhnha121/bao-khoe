@@ -1,0 +1,310 @@
+﻿@using BaoKhoe.Models
+@{
+  List<Article> hotArticles = ViewBag.HotArticles == null ? new List<Article>() : ViewBag.HotArticles;
+  List<Article> sameCategoryArticles = ViewBag.SameCategoryArticles == null ? new List<Article>() : ViewBag.SameCategoryArticles;
+}
+<div class="pkg grid1000">
+  <hr class="line mar_bottom25 mar_top20">
+  <div class="pkg list_new_speacial">
+    <div class="title_cate_home mar_bottom20">Tin hot trong ngày</div>
+    <div class="pkg">
+      @if (hotArticles.Count > 1)
+      {
+        <div class="col380 fl">
+          <div class="module-thumb mar_bottom10">
+            <a href="@("/" + hotArticles[0].Category.Url + "/" + hotArticles[0].FriendlyTitle)" class="thumb16x9">
+              <img style="background: #ececec" src="@hotArticles[0].Thumbnail" class="unload-image"
+                   data-src="@hotArticles[0].Thumbnail"
+                   title="@hotArticles[0].Title">
+            </a>
+          </div>
+          <h3>
+            <a href="@("/" + hotArticles[0].Category.Url + "/" + hotArticles[1].FriendlyTitle)"
+               class="fontOPB f22">@hotArticles[1].Title</a>
+          </h3>
+          <div class="mar_top10">
+            <a href="/@hotArticles[0].Category.Url/" class="tag_cate fontOPB">
+              @hotArticles[0].Category.Name
+            </a>
+            <span class="cl999 fontOP">
+              - <time class="time-ago" datetime="@(hotArticles[0].CreatedAt.ToString(" s"))">
+                @hotArticles[0].GetDisplayTime()
+              </time>
+            </span>
+          </div>
+        </div>
+        <div class="col220 fl">
+          <div class="module-thumb mar_bottom10">
+            <a href="@("/" + hotArticles[1].Category.Url + "/" + hotArticles[1].FriendlyTitle)" class="thumb16x9">
+              <img style="background: #ececec"
+                   src="@hotArticles[1].Thumbnail"
+                   class="unload-image"
+                   data-src="@hotArticles[1].Thumbnail"
+                   title="@hotArticles[1].Title" />
+            </a>
+          </div>
+          <h3>
+            <a href="@("/" + hotArticles[1].Category.Url + "/" + hotArticles[1].FriendlyTitle)" class="fontOPB f16">
+              @hotArticles[1].Title
+            </a>
+          </h3>
+          <div class="mar_top10 f12">
+            <a href="/@hotArticles[1].Category.Url/" class="tag_cate fontOPB">
+              @hotArticles[1].Category.Name
+            </a>
+            <span class="cl999 fontOP">
+              - <time class="time-ago" datetime="@(hotArticles[1].CreatedAt.ToString(" s"))">
+                @hotArticles[1].GetDisplayTime()
+              </time>
+            </span>
+          </div>
+          <div class="sapo_news mar_top5">
+            @hotArticles[1].Headlines
+          </div>
+        </div>
+      }
+
+      @if (hotArticles.Count > 2)
+      {
+        <div class="col350 fl">
+          <ul class="list_new_speacial_right">
+            @for (int i = 2; i < hotArticles.Count; i++)
+            {
+              <li class="pkg">
+                <div class="module-thumb thumb140 fl">
+                  <a href="/@hotArticles[i].Category.Url/@hotArticles[i].FriendlyTitle" class="thumb16x9">
+                    <img style="background: #ececec" src="@hotArticles[i].Thumbnail"
+                         class="unload-image"
+                         data-src="@hotArticles[i].Thumbnail"
+                         title="@hotArticles[i].Title">
+                  </a>
+                </div>
+                <div class="fl col-list-right">
+                  <h3 class="limit_sapo_new3">
+                    <a href="/@hotArticles[i].Category.Url/@hotArticles[i].FriendlyTitle">
+                      @hotArticles[i].Title
+                    </a>
+                  </h3>
+                  <div class="f11">
+                    <a href="/@hotArticles[i].Category.Url/" class="tag_cate fontOPB">
+                      @hotArticles[i].Category.Name
+                    </a>
+                  </div>
+                </div>
+              </li>
+            }
+          </ul>
+        </div>
+      }
+
+    </div>
+  </div>
+</div>
+
+<div class="pkg grid1000 mar_top40">
+  <div class="line_bg mar_top20 mar_bottom40"></div>
+  <div class="col660 fl">
+    <div class="title_cate_home mar_bottom20">Tin cùng chuyên mục</div>
+    <div class="list_cat_news list_cat_news_detail ">
+      @for (int i = 0; i < 4 && i < sameCategoryArticles.Count; i++)
+      {
+        <div class="box_vertical pkg">
+          <div class="module-thumb">
+            <a href="/@sameCategoryArticles[i].Category.Url/@sameCategoryArticles[i].FriendlyTitle" class="thumb16x9 fl">
+              <img style="background: #ececec" src="@sameCategoryArticles[i].Thumbnail"
+                   class="unload-image"
+                   data-src="@sameCategoryArticles[i].Thumbnail"
+                   title="@sameCategoryArticles[i].Title">
+            </a>
+          </div>
+          <div class="info_vertical_news fl">
+            <h3>
+              <a href="/@sameCategoryArticles[i].Category.Url/@sameCategoryArticles[i].FriendlyTitle" class="title_cate fontOPB">
+                @sameCategoryArticles[i].Title
+              </a>
+            </h3>
+            <div class="time_cate">
+              <a href="/@sameCategoryArticles[i].Category.Url/" class="tag_cate fontOPB">
+                @sameCategoryArticles[i].Category.Name
+              </a> - <span class="time_news fontOP">
+                <time class="time-ago" datetime="@(sameCategoryArticles[i].CreatedAt.ToString(" s"))">
+                  @sameCategoryArticles[i].GetDisplayTime()
+                </time>
+              </span>
+            </div>
+            <div class="sapo_news limit_sapo_new2">
+              @sameCategoryArticles[i].Headlines
+            </div>
+          </div>
+        </div>
+      }
+
+      @if (sameCategoryArticles.Count >= 4)
+      {
+        <div class="box_vertical box_vertical_big">
+          <h3>
+            <a href="/@sameCategoryArticles[4].Category.Url/@sameCategoryArticles[5].FriendlyTitle"
+               class="fontOPB f24 mar_bottom10">
+              @sameCategoryArticles[4].Title
+            </a>
+          </h3>
+          <div class="time_cate mar_bottom5">
+            <a href="/@sameCategoryArticles[4].Category.Url/" class="tag_cate fontOPB">
+              @sameCategoryArticles[4].Category.Name
+            </a> - <span class="time_news fontOP">
+              <time class="time-ago" datetime="@sameCategoryArticles[4].CreatedAt.ToString(" s")">
+                @sameCategoryArticles[4].GetDisplayTime()
+              </time>
+            </span>
+          </div>
+          <div class="sapo_news mar_bottom20">
+            @sameCategoryArticles[4].Headlines
+          </div>
+          <a href="/@sameCategoryArticles[4].Category.Url/@sameCategoryArticles[4].FriendlyTitle" class="thumbblock">
+            <img style="background: #ececec"
+                 src="@sameCategoryArticles[4].Thumbnail"
+                 class="unload-image"
+                 data-src="@sameCategoryArticles[4].Thumbnail"
+                 title="@sameCategoryArticles[4].Title">
+          </a>
+        </div>
+      }
+
+      @for (int i = 5; i < sameCategoryArticles.Count && i < 7; i++)
+      {
+        <div class="box_vertical pkg">
+          <div class="module-thumb">
+            <a href="/@sameCategoryArticles[i].Category.Url/@sameCategoryArticles[i].FriendlyTitle" class="thumb16x9 fl">
+              <img style="background: #ececec" src="@sameCategoryArticles[i].Thumbnail"
+                   class="unload-image"
+                   data-src="@sameCategoryArticles[i].Thumbnail"
+                   title="@sameCategoryArticles[i].Title">
+            </a>
+          </div>
+          <div class="info_vertical_news fl">
+            <h3>
+              <a href="/@sameCategoryArticles[i].Category.Url/@sameCategoryArticles[i].FriendlyTitle" class="title_cate fontOPB">
+                @sameCategoryArticles[i].Title
+              </a>
+            </h3>
+            <div class="time_cate">
+              <a href="/@sameCategoryArticles[i].Category.Url/" class="tag_cate fontOPB">
+                @sameCategoryArticles[i].Category.Name
+              </a> - <span class="time_news fontOP">
+                <time class="time-ago" datetime="@sameCategoryArticles[i].CreatedAt.ToString(" s")">
+                  @sameCategoryArticles[i].GetDisplayTime()
+                </time>
+              </span>
+            </div>
+            <div class="sapo_news limit_sapo_new2"> @sameCategoryArticles[i].Headlines </div>
+          </div>
+        </div>
+      }
+
+      <div class="box_vertical box_vertical_2col pkg">
+        @if (sameCategoryArticles.Count >= 8)
+        {
+          <div class="col440 fl">
+            <h3>
+              <a href="/@sameCategoryArticles[7].Category.Url/@sameCategoryArticles[7].FriendlyTitle"
+                 class="title_cate fontOPB mar_bottom15">
+                @sameCategoryArticles[7].Title
+              </a>
+            </h3>
+            <div class="module-thumb">
+              <a href="/@sameCategoryArticles[7].Category.Url/@sameCategoryArticles[7].FriendlyTitle" class="thumb16x9">
+                <img style="background: #ececec" src="@sameCategoryArticles[7].Thumbnail"
+                     class="unload-image"
+                     data-src="@sameCategoryArticles[7].Thumbnail"
+                     title="@sameCategoryArticles[7].Title">
+              </a>
+            </div>
+            <div class="info_news_485 fl">
+              <div class="time_cate">
+                <a href="/@sameCategoryArticles[7].Category.Url/" class="tag_cate fontOPB">
+                  @sameCategoryArticles[7].Category.Name
+                </a> - <span class="time_news fontOP">
+                  <time class="time-ago" datetime="@sameCategoryArticles[7].CreatedAt.ToString(" s")">
+                    @sameCategoryArticles[7].GetDisplayTime()
+                  </time>
+                </span>
+              </div>
+              <div class="sapo_news limit_sapo_new4"> @sameCategoryArticles[7].Headlines </div>
+            </div>
+          </div>
+        }
+        @if (sameCategoryArticles.Count >= 9)
+        {
+          <div class="col220 fr">
+            <a href="/@sameCategoryArticles[8].Category.Url/" class="tag_cate fontOPB">
+              @sameCategoryArticles[8].Category.Name
+            </a> - <span class="time_news fontOP">
+              <time class="time-ago" datetime="@sameCategoryArticles[8].CreatedAt.ToString(" s")">
+                @sameCategoryArticles[8].GetDisplayTime()
+              </time>
+            </span>
+
+            <h3 class="mar_bottom10">
+              <a href="/@sameCategoryArticles[8].Category.Url/@sameCategoryArticles[8].FriendlyTitle"
+                 class="f14 fontOPB mar_bottom10">@sameCategoryArticles[8].Title</a>
+              </h3>
+              <div class="thumbblock thumb110x74 fl">
+                <a href="/@sameCategoryArticles[8].Category.Url/@sameCategoryArticles[8].FriendlyTitle" class="thumb16x9">
+                  <img style="background: #ececec" src="@sameCategoryArticles[8].Thumbnail"
+                       class="unload-image"
+                       data-src="@sameCategoryArticles[8].Thumbnail"
+                       title="@sameCategoryArticles[8].Title">
+                </a>
+              </div>
+              <div class="sapo_news f13">
+                @sameCategoryArticles[8].Headlines
+              </div>
+            </div>
+          }
+      </div>
+
+      @for (int i = 9; i < sameCategoryArticles.Count && i < 20; i++)
+      {
+        <div class="box_vertical pkg">
+          <div class="module-thumb">
+            <a class="thumb16x9 fl">
+              <img style="background: #ececec"
+                   src="@sameCategoryArticles[i].Thumbnail"
+                   class="unload-image"
+                   data-src="@sameCategoryArticles[i].Thumbnail"
+                   title="@sameCategoryArticles[i].Title">
+            </a>
+          </div>
+          <div class="info_vertical_news fl">
+            <h3>
+              <a href="/@sameCategoryArticles[i].Category.Url/@sameCategoryArticles[i].FriendlyTitle"
+                 class="title_cate fontOPB">
+                @sameCategoryArticles[i].Title
+              </a>
+            </h3>
+            <div class="time_cate">
+              <a href="/@sameCategoryArticles[i].Category.Url/" class="tag_cate fontOPB">
+                @sameCategoryArticles[i].Category.Name
+              </a> - <span class="time_news fontOP">
+                <time class="time-ago" datetime="@sameCategoryArticles[i].CreatedAt.ToString(" s")">
+                  @sameCategoryArticles[i].GetDisplayTime()
+                </time>
+              </span>
+            </div>
+            <div class="sapo_news limit_sapo_new2"> @sameCategoryArticles[i].Headlines </div>
+          </div>
+        </div>
+      }
+
+    </div>
+  </div>
+  <div class="col300 fr">
+    <div class="ss-spacer">
+      <div class="ss-sidebar">
+        <div id='div-gpt-ad-1478236013072-0' class="qcao">
+          <a href="#"><img alt="" src="../../../assets/pic/qc5.png" /></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

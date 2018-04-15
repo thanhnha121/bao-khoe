@@ -17,7 +17,7 @@ namespace BaoKhoe.Controllers
         }
 
         // GET: Detail
-        [OutputCache(Duration = 1200, VaryByParam = "url")]
+        // [OutputCache(Duration = 1200, VaryByParam = "url")]
         public ActionResult Index(string url)
         {
             DateTime date = DateTime.Now.AddDays(-14);
@@ -49,6 +49,15 @@ namespace BaoKhoe.Controllers
                     }
                 }
                 ViewBag.Category = category;
+
+                List<Article> topHotArticles = _appDbContext.Articles
+                    .Where(x => x.CreatedAt > date)
+                    .OrderByDescending(x => x.ViewCount)
+                    .ThenByDescending(x => x.CreatedAt)
+                    .Include(x => x.Category)
+                    .Take(10)
+                    .ToList();
+                ViewBag.TopHotArticles = topHotArticles;
 
                 // include sub category
                 List<Article> articles1 = _appDbContext.Articles

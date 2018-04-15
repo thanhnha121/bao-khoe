@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using BaoKhoe.Models;
 
@@ -18,7 +17,7 @@ namespace BaoKhoe.Controllers
         }
 
         // GET: Tag
-        [OutputCache(Duration = 1200, VaryByParam = "url")]
+        // [OutputCache(Duration = 1200, VaryByParam = "url")]
         public ActionResult Index(string url)
         {
             string[] input = url.Split('/');
@@ -47,13 +46,6 @@ namespace BaoKhoe.Controllers
                     .Take(20)
                     .ToList();
 
-            //List<Article> articles = _appDbContext.Articles
-            //    .Where(x => x.ArticleKeywords.Select(z => z.Keyword.FriendlyTitle).ToList().Any(y => y.ToLower().Equals(tag.ToLower())))
-            //    .OrderByDescending(x => x.CreatedAt)
-            //    .Include(x => x.Category)
-            //    .Take(20)
-            //    .ToList();
-
             ViewBag.Tag = tag;
             ViewBag.Articles = articles;
 
@@ -68,14 +60,6 @@ namespace BaoKhoe.Controllers
         // Load More
         public ActionResult LoadMore(string tag, string listUrls)
         {
-            //List<Article> articles = _appDbContext.Articles
-            //    .Where(x => !listUrls.Contains(x.FriendlyTitle) 
-            //        && x.ArticleKeywords.Select(z => z.Keyword.FriendlyTitle).ToList().Any(y => y.ToLower().Equals(tag.ToLower())))
-            //    .OrderByDescending(x => x.CreatedAt)
-            //    .Include(x => x.Category)
-            //    .Take(20)
-            //    .ToList();
-
             List<Article> articles =
                 _appDbContext.ArticleKeywords.Where(x => x.Keyword.FriendlyTitle.Equals(tag.ToLower()) && !listUrls.Contains(x.Article.FriendlyTitle))
                     .Select(y => y.Article)
